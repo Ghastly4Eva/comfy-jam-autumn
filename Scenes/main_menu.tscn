@@ -1,5 +1,14 @@
 [gd_scene format=3 uid="uid://berwnwptsfqwj"]
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_erv1k"]
+size = Vector2(100, 20)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_28flt"]
+size = Vector2(100, 20)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_48xlc"]
+size = Vector2(100, 20)
+
 [node name="Main menu" type="Node" unique_id=1439380071]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=844148301]
@@ -25,12 +34,22 @@ grow_vertical = 2
 [node name="Buttons" type="VBoxContainer" parent="CanvasLayer/Control/HBoxContainer" unique_id=1059330118]
 layout_mode = 2
 size_flags_horizontal = 3
+alignment = 1
 
 [node name="Start Button" type="TextureButton" parent="CanvasLayer/Control/HBoxContainer/Buttons" unique_id=1250812364]
 layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = SubResource("PlaceholderTexture2D_erv1k")
+
+[node name="Credits Button" type="TextureButton" parent="CanvasLayer/Control/HBoxContainer/Buttons" unique_id=519772493]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = SubResource("PlaceholderTexture2D_28flt")
 
 [node name="Quit Button" type="TextureButton" parent="CanvasLayer/Control/HBoxContainer/Buttons" unique_id=255236398]
 layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = SubResource("PlaceholderTexture2D_48xlc")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control/HBoxContainer" unique_id=767008705]
 layout_mode = 2
