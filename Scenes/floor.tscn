@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://j83bxgstatmq"]
+
+[ext_resource type="Texture2D" uid="uid://c761gcej6p0h0" path="res://Assets/Levels/Level_one/1-Floor.png" id="1_ugy24"]
+[ext_resource type="Texture2D" uid="uid://p2l5fd3j4gyg" path="res://Assets/Levels/Level_one/2-Dust.png" id="2_1kv48"]
+[ext_resource type="Texture2D" uid="uid://tbrqggc85bbq" path="res://Assets/Levels/Level_one/3-Rugs.png" id="3_m6wij"]
+[ext_resource type="Texture2D" uid="uid://dqu5xc53dycow" path="res://Assets/Levels/Level_one/4-Walls.png" id="4_0h37b"]
+[ext_resource type="Texture2D" uid="uid://bxxp5wyntwydh" path="res://Assets/Levels/Level_one/5-Borders.png" id="5_t4j7g"]
+
+[node name="Node2D" type="Node2D" unique_id=1404622031]
+
+[node name="1Floor" type="Sprite2D" parent="." unique_id=67044967]
+position = Vector2(112, 112)
+texture = ExtResource("1_ugy24")
+
+[node name="2Dust" type="Sprite2D" parent="." unique_id=946728637]
+position = Vector2(112, 112)
+texture = ExtResource("2_1kv48")
+
+[node name="3Rugs" type="Sprite2D" parent="." unique_id=38768957]
+position = Vector2(112, 112)
+texture = ExtResource("3_m6wij")
+
+[node name="4Walls" type="Sprite2D" parent="." unique_id=1863706579]
+position = Vector2(112, 112)
+texture = ExtResource("4_0h37b")
+
+[node name="5Borders" type="Sprite2D" parent="." unique_id=1367649409]
+position = Vector2(112, 112)
+texture = ExtResource("5_t4j7g")
