@@ -1,3 +1,13 @@
 [gd_scene format=3 uid="uid://5ebl8n0dsb47"]
 
+[ext_resource type="PackedScene" uid="uid://dredun36gllmm" path="res://Scenes/Player.tscn" id="1_qxrlw"]
+[ext_resource type="PackedScene" uid="uid://j83bxgstatmq" path="res://Scenes/floor.tscn" id="2_wrm1d"]
+
 [node name="Game" type="Node2D" unique_id=1782714123]
+
+[node name="CharacterBody2D" parent="." unique_id=1182345236 instance=ExtResource("1_qxrlw")]
+z_index = 4
+position = Vector2(64, 120)
+
+[node name="Node2D" parent="." unique_id=1404622031 instance=ExtResource("2_wrm1d")]
+scale = Vector2(1.0800002, 0.80000025)

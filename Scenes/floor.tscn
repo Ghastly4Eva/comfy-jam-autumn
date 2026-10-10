@@ -5,25 +5,125 @@
 [ext_resource type="Texture2D" uid="uid://tbrqggc85bbq" path="res://Assets/Levels/Level_one/3-Rugs.png" id="3_m6wij"]
 [ext_resource type="Texture2D" uid="uid://dqu5xc53dycow" path="res://Assets/Levels/Level_one/4-Walls.png" id="4_0h37b"]
 [ext_resource type="Texture2D" uid="uid://bxxp5wyntwydh" path="res://Assets/Levels/Level_one/5-Borders.png" id="5_t4j7g"]
+[ext_resource type="Texture2D" uid="uid://bukjb8xi1anyg" path="res://Assets/Levels/Level_one/Bath-1.png" id="6_3wro3"]
+[ext_resource type="Texture2D" uid="uid://dqgfg6a2enuak" path="res://Assets/Levels/Level_one/Bath-2.png" id="7_hfeva"]
+[ext_resource type="Texture2D" uid="uid://bnnk1hkw8shmd" path="res://Assets/Levels/Level_one/Bath-3.png" id="8_cftyq"]
+[ext_resource type="Texture2D" uid="uid://c3t0vv5asgx2j" path="res://Assets/Levels/Level_one/Bed-1.png" id="9_0imtb"]
+[ext_resource type="Texture2D" uid="uid://c3ddxhjdbnesi" path="res://Assets/Levels/Level_one/Bed-2.png" id="10_lh0w0"]
+[ext_resource type="Texture2D" uid="uid://bern3jbggpeck" path="res://Assets/Levels/Level_one/Bed-3.png" id="11_htr5w"]
+[ext_resource type="Texture2D" uid="uid://bk8dcsvequcm" path="res://Assets/Levels/Level_one/Bed-4.png" id="12_gdowu"]
+[ext_resource type="Texture2D" uid="uid://dejp3xewmtbjy" path="res://Assets/Levels/Level_one/Bed-5.png" id="13_g7lhs"]
+[ext_resource type="Texture2D" uid="uid://dsa15ynv6mciy" path="res://Assets/Levels/Level_one/Bed-6.png" id="14_x43g6"]
+[ext_resource type="Texture2D" uid="uid://1q6fgnbyy7s0" path="res://Assets/Levels/Level_one/Bed-7.png" id="15_5o6eo"]
+[ext_resource type="Texture2D" uid="uid://6dgxdtff7qw8" path="res://Assets/Levels/Level_one/Kitchen-1.png" id="16_r486w"]
+[ext_resource type="Texture2D" uid="uid://betk6mxmu13mu" path="res://Assets/Levels/Level_one/Kitchen-2.png" id="17_o3uwc"]
+[ext_resource type="Texture2D" uid="uid://ce3jc8bxwdrmv" path="res://Assets/Levels/Level_one/Kitchen-3.png" id="18_clwi6"]
+[ext_resource type="Texture2D" uid="uid://cptl636luf3oj" path="res://Assets/Levels/Level_one/Kitchen-4.png" id="19_rod1p"]
+[ext_resource type="Texture2D" uid="uid://bcqtqv3xxy5bd" path="res://Assets/Levels/Level_one/Kitchen-5.png" id="20_u27o3"]
+[ext_resource type="Texture2D" uid="uid://vkt8ryutq4pj" path="res://Assets/Levels/Level_one/Main-1.png" id="21_uqctg"]
+[ext_resource type="Texture2D" uid="uid://b32ptw5v2t3k5" path="res://Assets/Levels/Level_one/Main-2.png" id="22_ykef0"]
+[ext_resource type="Texture2D" uid="uid://co43fux8dmwpa" path="res://Assets/Levels/Level_one/Main-3.png" id="23_yt00v"]
+[ext_resource type="Texture2D" uid="uid://b86biohvorr41" path="res://Assets/Levels/Level_one/Main-4.png" id="24_y80gr"]
+[ext_resource type="Texture2D" uid="uid://c8ej6ye7qq7oe" path="res://Assets/Levels/Level_one/Main-5.png" id="25_hscm7"]
 
 [node name="Node2D" type="Node2D" unique_id=1404622031]
 
-[node name="1Floor" type="Sprite2D" parent="." unique_id=67044967]
-position = Vector2(112, 112)
+[node name="1Floor" type="Sprite2D" parent="." unique_id=827151130]
+position = Vector2(112, 64)
 texture = ExtResource("1_ugy24")
 
-[node name="2Dust" type="Sprite2D" parent="." unique_id=946728637]
-position = Vector2(112, 112)
+[node name="2Dust" type="Sprite2D" parent="." unique_id=447902623]
+position = Vector2(112, 64)
 texture = ExtResource("2_1kv48")
 
-[node name="3Rugs" type="Sprite2D" parent="." unique_id=38768957]
-position = Vector2(112, 112)
+[node name="3Rugs" type="Sprite2D" parent="." unique_id=836514875]
+position = Vector2(112, 64)
 texture = ExtResource("3_m6wij")
 
-[node name="4Walls" type="Sprite2D" parent="." unique_id=1863706579]
-position = Vector2(112, 112)
+[node name="4Walls" type="Sprite2D" parent="." unique_id=842979525]
+position = Vector2(112, 64)
 texture = ExtResource("4_0h37b")
 
-[node name="5Borders" type="Sprite2D" parent="." unique_id=1367649409]
-position = Vector2(112, 112)
+[node name="5Borders" type="Sprite2D" parent="." unique_id=385514283]
+position = Vector2(112, 64)
 texture = ExtResource("5_t4j7g")
+
+[node name="Bath1" type="Sprite2D" parent="." unique_id=1466411016]
+position = Vector2(112, 64)
+texture = ExtResource("6_3wro3")
+
+[node name="Bath2" type="Sprite2D" parent="." unique_id=53189227]
+position = Vector2(112, 64)
+texture = ExtResource("7_hfeva")
+
+[node name="Bath3" type="Sprite2D" parent="." unique_id=866535073]
+position = Vector2(112, 64)
+texture = ExtResource("8_cftyq")
+
+[node name="Bed1" type="Sprite2D" parent="." unique_id=560323444]
+position = Vector2(112, 64)
+texture = ExtResource("9_0imtb")
+
+[node name="Bed2" type="Sprite2D" parent="." unique_id=440049676]
+position = Vector2(112, 64)
+texture = ExtResource("10_lh0w0")
+
+[node name="Bed3" type="Sprite2D" parent="." unique_id=800500448]
+position = Vector2(112, 64)
+texture = ExtResource("11_htr5w")
+
+[node name="Bed4" type="Sprite2D" parent="." unique_id=468321318]
+position = Vector2(112, 64)
+texture = ExtResource("12_gdowu")
+
+[node name="Bed5" type="Sprite2D" parent="." unique_id=1921623311]
+position = Vector2(112, 64)
+texture = ExtResource("13_g7lhs")
+
+[node name="Bed6" type="Sprite2D" parent="." unique_id=1393040259]
+position = Vector2(112, 64)
+texture = ExtResource("14_x43g6")
+
+[node name="Bed7" type="Sprite2D" parent="." unique_id=1063578649]
+position = Vector2(112, 64)
+texture = ExtResource("15_5o6eo")
+
+[node name="Kitchen1" type="Sprite2D" parent="." unique_id=2003741371]
+position = Vector2(112, 64)
+texture = ExtResource("16_r486w")
+
+[node name="Kitchen2" type="Sprite2D" parent="." unique_id=250988809]
+position = Vector2(112, 64)
+texture = ExtResource("17_o3uwc")
+
+[node name="Kitchen3" type="Sprite2D" parent="." unique_id=760153603]
+position = Vector2(112, 64)
+texture = ExtResource("18_clwi6")
+
+[node name="Kitchen4" type="Sprite2D" parent="." unique_id=1447708566]
+position = Vector2(112, 64)
+texture = ExtResource("19_rod1p")
+
+[node name="Kitchen5" type="Sprite2D" parent="." unique_id=1039534953]
+position = Vector2(112, 64)
+texture = ExtResource("20_u27o3")
+
+[node name="Main1" type="Sprite2D" parent="." unique_id=1934208960]
+position = Vector2(112, 64)
+texture = ExtResource("21_uqctg")
+
+[node name="Main2" type="Sprite2D" parent="." unique_id=1188449982]
+position = Vector2(112, 64)
+texture = ExtResource("22_ykef0")
+
+[node name="Main3" type="Sprite2D" parent="." unique_id=139057952]
+position = Vector2(112, 64)
+texture = ExtResource("23_yt00v")
+
+[node name="Main4" type="Sprite2D" parent="." unique_id=1843943195]
+position = Vector2(112, 64)
+texture = ExtResource("24_y80gr")
+
+[node name="Main5" type="Sprite2D" parent="." unique_id=1280017621]
+position = Vector2(112, 64)
+texture = ExtResource("25_hscm7")
