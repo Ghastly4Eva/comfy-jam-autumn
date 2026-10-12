@@ -26,7 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://b86biohvorr41" path="res://Assets/Levels/Level_one/Main-4.png" id="24_y80gr"]
 [ext_resource type="Texture2D" uid="uid://c8ej6ye7qq7oe" path="res://Assets/Levels/Level_one/Main-5.png" id="25_hscm7"]
 
-[node name="Node2D" type="Node2D" unique_id=1404622031]
+[node name="Room1" type="Node2D" unique_id=1404622031]
 
 [node name="1Floor" type="Sprite2D" parent="." unique_id=827151130]
 position = Vector2(112, 64)
@@ -65,11 +65,11 @@ position = Vector2(112, 64)
 texture = ExtResource("9_0imtb")
 
 [node name="Bed2" type="Sprite2D" parent="." unique_id=440049676]
-position = Vector2(112, 64)
+position = Vector2(110, 64)
 texture = ExtResource("10_lh0w0")
 
 [node name="Bed3" type="Sprite2D" parent="." unique_id=800500448]
-position = Vector2(112, 64)
+position = Vector2(111, 64)
 texture = ExtResource("11_htr5w")
 
 [node name="Bed4" type="Sprite2D" parent="." unique_id=468321318]
@@ -92,21 +92,21 @@ texture = ExtResource("15_5o6eo")
 position = Vector2(112, 64)
 texture = ExtResource("16_r486w")
 
-[node name="Kitchen2" type="Sprite2D" parent="." unique_id=250988809]
-position = Vector2(112, 64)
-texture = ExtResource("17_o3uwc")
-
 [node name="Kitchen3" type="Sprite2D" parent="." unique_id=760153603]
 position = Vector2(112, 64)
 texture = ExtResource("18_clwi6")
+
+[node name="Kitchen5" type="Sprite2D" parent="." unique_id=1039534953]
+position = Vector2(112, 64)
+texture = ExtResource("20_u27o3")
 
 [node name="Kitchen4" type="Sprite2D" parent="." unique_id=1447708566]
 position = Vector2(112, 64)
 texture = ExtResource("19_rod1p")
 
-[node name="Kitchen5" type="Sprite2D" parent="." unique_id=1039534953]
+[node name="Kitchen2" type="Sprite2D" parent="." unique_id=250988809]
 position = Vector2(112, 64)
-texture = ExtResource("20_u27o3")
+texture = ExtResource("17_o3uwc")
 
 [node name="Main1" type="Sprite2D" parent="." unique_id=1934208960]
 position = Vector2(112, 64)
