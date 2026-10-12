@@ -1,8 +1,11 @@
+class_name Player
 extends CharacterBody2D
 @onready var anims_ref = $AnimatedSprite2D
 var timer_ref
 
-const SPEED = 100.0
+@onready var animations: AnimatedSprite2D = $AnimatedSprite2D
+@onready var state_machine: Node = $StateMachine
+@onready var candy_icons: Sprite2D = $CandyIcons
 
 
 func _physics_process(delta: float) -> void:
@@ -43,3 +46,11 @@ func _physics_process(delta: float) -> void:
 				timers.free()
 		
 	move_and_slide()
+
+func picked_up_item(passeditem: int) -> void:
+	candy_icons.visible = true;
+	candy_icons.frame = passeditem;
+	pass
+
+func _process(delta: float) -> void:
+	state_machine.process_frame(delta)

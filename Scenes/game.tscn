@@ -1,7 +1,14 @@
 [gd_scene format=3 uid="uid://5ebl8n0dsb47"]
 
+[ext_resource type="PackedScene" uid="uid://c4ke2xmv7qslu" path="res://Scenes/front_door_scene.tscn" id="1_3dryh"]
 [ext_resource type="PackedScene" uid="uid://dredun36gllmm" path="res://Scenes/Player.tscn" id="1_qxrlw"]
 [ext_resource type="PackedScene" uid="uid://j83bxgstatmq" path="res://Scenes/floor.tscn" id="2_wrm1d"]
+[ext_resource type="PackedScene" uid="uid://billwxtl2jbgx" path="res://Scenes/DoorInteraction.tscn" id="3_wrm1d"]
+[ext_resource type="Texture2D" uid="uid://dejp3xewmtbjy" path="res://Assets/Levels/Level_one/Bed-5.png" id="5_1l0tm"]
+[ext_resource type="Texture2D" uid="uid://dsa15ynv6mciy" path="res://Assets/Levels/Level_one/Bed-6.png" id="6_v158k"]
+[ext_resource type="Texture2D" uid="uid://bukjb8xi1anyg" path="res://Assets/Levels/Level_one/Bath-1.png" id="7_h4fw4"]
+[ext_resource type="Texture2D" uid="uid://cwscwtoeb5yen" path="res://Assets/Anims/TheCat.png" id="8_v158k"]
+[ext_resource type="PackedScene" uid="uid://bytm71lrdlkvo" path="res://Scenes/CandyInteract.tscn" id="9_h4fw4"]
 
 [node name="Game" type="Node2D" unique_id=1782714123]
 y_sort_enabled = true
@@ -18,5 +25,36 @@ offset_bottom = -488.0
 scale = Vector2(44.35322, 37.23979)
 color = Color(0, 0, 0, 1)
 
-[node name="CharacterBody2D" parent="." unique_id=1182345236 instance=ExtResource("1_qxrlw")]
+[node name="TopMapLayer" type="Node2D" parent="." unique_id=750326274]
+z_index = 5
+
+[node name="Bed5" type="Sprite2D" parent="TopMapLayer" unique_id=1550817431]
+position = Vector2(112, 64)
+texture = ExtResource("5_1l0tm")
+
+[node name="Bed6" type="Sprite2D" parent="TopMapLayer" unique_id=199926819]
+position = Vector2(112, 64)
+texture = ExtResource("6_v158k")
+
+[node name="Bath1" type="Sprite2D" parent="TopMapLayer" unique_id=1575149825]
+position = Vector2(112, 64)
+texture = ExtResource("7_h4fw4")
+
+[node name="CharacterBody2D" parent="." unique_id=1182345236 groups=["player"] instance=ExtResource("1_qxrlw")]
+z_index = 4
 position = Vector2(64, 120)
+
+[node name="FrontDoorScene" parent="CharacterBody2D" unique_id=294255432 instance=ExtResource("1_3dryh")]
+visible = false
+
+[node name="Map" parent="." unique_id=1404622031 instance=ExtResource("2_wrm1d")]
+
+[node name="DoorInteraction" parent="." unique_id=1172758354 instance=ExtResource("3_wrm1d")]
+position = Vector2(188, 3)
+
+[node name="TheCat" type="Sprite2D" parent="." unique_id=242579943]
+position = Vector2(145, 115)
+texture = ExtResource("8_v158k")
+
+[node name="CandyInteraction" parent="." unique_id=421576071 instance=ExtResource("9_h4fw4")]
+position = Vector2(140, 58)

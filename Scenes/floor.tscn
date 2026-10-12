@@ -107,6 +107,8 @@ y_sort_enabled = true
 [node name="1Floor" type="Sprite2D" parent="." unique_id=827151130]
 z_index = -4
 position = Vector2(112, 64)
+
+[node name="1Floor" type="Sprite2D" parent="FloorLayers" unique_id=827151130]
 texture = ExtResource("1_ugy24")
 
 [node name="2Dust" type="Sprite2D" parent="." unique_id=447902623]
