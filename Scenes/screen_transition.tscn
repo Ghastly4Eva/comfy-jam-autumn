@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://hycwqkekcbjd"]
 
-[ext_resource type="Script" uid="uid://beywj04ldme84" path="res://Screen Transition/screen_transition.gd" id="1_8xucd"]
+[ext_resource type="Script" uid="uid://beywj04ldme84" path="res://Scripts/screen_transition.gd" id="1_8xucd"]
 
 [sub_resource type="Animation" id="Animation_fr3c5"]
 length = 0.001

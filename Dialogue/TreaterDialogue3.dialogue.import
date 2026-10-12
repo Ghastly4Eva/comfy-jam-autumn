@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://dy2bengsolvdr"
+path="res://.godot/imported/TreaterDialogue3.dialogue-c79e5647814e968a0786d4f9a399b474.tres"
+
+[deps]
+
+source_file="res://Dialogue/TreaterDialogue3.dialogue"
+dest_files=["res://.godot/imported/TreaterDialogue3.dialogue-c79e5647814e968a0786d4f9a399b474.tres"]
+
+[params]
+
+defaults=true
