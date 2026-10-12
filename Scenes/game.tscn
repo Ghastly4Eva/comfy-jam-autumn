@@ -11,6 +11,19 @@
 [ext_resource type="PackedScene" uid="uid://bytm71lrdlkvo" path="res://Scenes/CandyInteract.tscn" id="9_h4fw4"]
 
 [node name="Game" type="Node2D" unique_id=1782714123]
+y_sort_enabled = true
+
+[node name="Room1" parent="." unique_id=1404622031 instance=ExtResource("2_wrm1d")]
+position = Vector2(-120, -8)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=439505183]
+z_index = -6
+offset_left = -600.0
+offset_top = -528.0
+offset_right = -560.0
+offset_bottom = -488.0
+scale = Vector2(44.35322, 37.23979)
+color = Color(0, 0, 0, 1)
 
 [node name="TopMapLayer" type="Node2D" parent="." unique_id=750326274]
 z_index = 5

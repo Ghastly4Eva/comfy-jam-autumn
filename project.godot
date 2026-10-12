@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ComfyJamAutumn"
-run/main_scene="uid://dredun36gllmm"
+run/main_scene="uid://5ebl8n0dsb47"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://Assets/icon.svg"
 
