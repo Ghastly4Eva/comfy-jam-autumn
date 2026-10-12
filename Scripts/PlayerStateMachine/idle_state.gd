@@ -2,8 +2,7 @@ extends State
 
 func enter() -> void:
 	super()
-	parent.velocity.x = 0
-	parent.velocity.y = 0
+	parent.velocity = Vector2.ZERO
 
 func process_frame(_delta: float) -> State:
 	parent.animations.play(animation_name)

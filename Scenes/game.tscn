@@ -45,3 +45,9 @@ texture = ExtResource("8_v158k")
 
 [node name="CandyInteraction" parent="." unique_id=421576071 instance=ExtResource("9_h4fw4")]
 position = Vector2(140, 58)
+
+[node name="CandyInteraction2" parent="." unique_id=1344167210 instance=ExtResource("9_h4fw4")]
+position = Vector2(106, 57)
+
+[node name="CandyInteraction3" parent="." unique_id=1319774573 instance=ExtResource("9_h4fw4")]
+position = Vector2(39, 56)

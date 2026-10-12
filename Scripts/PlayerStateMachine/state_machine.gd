@@ -2,6 +2,7 @@ extends Node
 
 @export var idle: State
 @export var walk: State
+@export var throw_item: State
 
 @export var starting_state: State
 var current_state: State
@@ -33,7 +34,8 @@ func process_input(_event: InputEvent) -> void:
 	var new_state = null
 	if Input.is_action_pressed('move_down') or Input.is_action_pressed('move_up') or Input.is_action_pressed('move_right') or Input.is_action_pressed('move_left'):
 		new_state = walk
-	else: new_state = idle
+	else: 
+		new_state = idle
 	
 	if new_state:
 		change_state(new_state)

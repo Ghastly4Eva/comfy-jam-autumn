@@ -6,6 +6,8 @@ var vel_y = 0
 
 func enter() -> void:
 	super()
+	parent.velocity.x = 0
+	parent.velocity.y = 0
 	pass
 
 func process_frame(_delta: float) -> State:

@@ -181,7 +181,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lyrkg")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"throwawayitem",
 "speed": 10.0
 }, {
@@ -267,10 +267,11 @@ position = Vector2(0, -15)
 sprite_frames = SubResource("SpriteFrames_nnl0l")
 animation = &"throwawayitem"
 
-[node name="StateMachine" type="Node" parent="." unique_id=509428797 node_paths=PackedStringArray("idle", "walk", "starting_state")]
+[node name="StateMachine" type="Node" parent="." unique_id=509428797 node_paths=PackedStringArray("idle", "walk", "throw_item", "starting_state")]
 script = ExtResource("3_5ixxa")
 idle = NodePath("Idle")
 walk = NodePath("Walk")
+throw_item = NodePath("")
 starting_state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="StateMachine" unique_id=2027700464]
