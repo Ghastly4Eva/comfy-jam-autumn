@@ -4,10 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://j83bxgstatmq" path="res://Scenes/floor.tscn" id="2_wrm1d"]
 
 [node name="Game" type="Node2D" unique_id=1782714123]
-
-[node name="CharacterBody2D" parent="." unique_id=1182345236 instance=ExtResource("1_qxrlw")]
-z_index = 1
-position = Vector2(64, 120)
+y_sort_enabled = true
 
 [node name="Room1" parent="." unique_id=1404622031 instance=ExtResource("2_wrm1d")]
 position = Vector2(-120, -8)
@@ -20,3 +17,6 @@ offset_right = -560.0
 offset_bottom = -488.0
 scale = Vector2(44.35322, 37.23979)
 color = Color(0, 0, 0, 1)
+
+[node name="CharacterBody2D" parent="." unique_id=1182345236 instance=ExtResource("1_qxrlw")]
+position = Vector2(64, 120)

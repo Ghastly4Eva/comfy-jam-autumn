@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://v3rpi6y7sp8a" path="res://Assets/Anims/MCSpriteV4-Sheet.png" id="2_kyqiw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nnl0l"]
-size = Vector2(65.85277, 27.51159)
+size = Vector2(65.85277, 35.37204)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gntrk"]
 atlas = ExtResource("2_kyqiw")
@@ -158,11 +158,12 @@ y_sort_enabled = true
 script = ExtResource("1_kyqiw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1560398573]
-position = Vector2(2.4158453e-13, 10.999999)
+position = Vector2(-3.9079837e-14, -7)
 scale = Vector2(0.24296623, 0.25443825)
 shape = SubResource("RectangleShape2D_nnl0l")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=667722202]
+position = Vector2(0, -17)
 sprite_frames = SubResource("SpriteFrames_nnl0l")
 animation = &"idle"
 
