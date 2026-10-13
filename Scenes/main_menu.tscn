@@ -3,7 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://dove8yhhe0e6m" path="res://Assets/UI assets/play_pressed.png" id="1_yhxw7"]
 [ext_resource type="Texture2D" uid="uid://djdiw34qew641" path="res://Assets/UI assets/play_hover.png" id="2_trj04"]
 [ext_resource type="Texture2D" uid="uid://der1qr55858af" path="res://Assets/UI assets/settings.png" id="3_16hvj"]
+[ext_resource type="Texture2D" uid="uid://yfvrd63tda5" path="res://Assets/UI assets/credits.png" id="3_vr1f0"]
+[ext_resource type="Texture2D" uid="uid://b5f4v83x7n7vs" path="res://Assets/UI assets/credits_pressed.png" id="4_t1dhk"]
 [ext_resource type="Texture2D" uid="uid://d02lj263m6t2h" path="res://Assets/UI assets/settings_pressed.png" id="4_vr1f0"]
+[ext_resource type="Texture2D" uid="uid://gc8osxef0k6a" path="res://Assets/UI assets/credits_hover.png" id="5_5egv6"]
 [ext_resource type="Texture2D" uid="uid://w0a8xg3sdwsd" path="res://Assets/UI assets/settings_hover.png" id="5_t1dhk"]
 [ext_resource type="Texture2D" uid="uid://c42kepi55o62k" path="res://Assets/UI assets/quit.png" id="6_5egv6"]
 [ext_resource type="Texture2D" uid="uid://bwsuu7hqs8xl0" path="res://Assets/UI assets/quit_pressed.png" id="7_vtepg"]
@@ -45,6 +48,13 @@ size_flags_horizontal = 4
 texture_normal = SubResource("PlaceholderTexture2D_erv1k")
 texture_pressed = ExtResource("1_yhxw7")
 texture_hover = ExtResource("2_trj04")
+
+[node name="Credits Button" type="TextureButton" parent="CanvasLayer/Control/HBoxContainer/Buttons" unique_id=1561171732]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_vr1f0")
+texture_pressed = ExtResource("4_t1dhk")
+texture_hover = ExtResource("5_5egv6")
 
 [node name="Settings Button" type="TextureButton" parent="CanvasLayer/Control/HBoxContainer/Buttons" unique_id=519772493]
 layout_mode = 2
