@@ -1,12 +1,15 @@
 [gd_scene format=3 uid="uid://berwnwptsfqwj"]
 
+[ext_resource type="Texture2D" uid="uid://dove8yhhe0e6m" path="res://Assets/UI assets/play_pressed.png" id="1_yhxw7"]
+[ext_resource type="Texture2D" uid="uid://djdiw34qew641" path="res://Assets/UI assets/play_hover.png" id="2_trj04"]
+[ext_resource type="Texture2D" uid="uid://der1qr55858af" path="res://Assets/UI assets/settings.png" id="3_16hvj"]
+[ext_resource type="Texture2D" uid="uid://d02lj263m6t2h" path="res://Assets/UI assets/settings_pressed.png" id="4_vr1f0"]
+[ext_resource type="Texture2D" uid="uid://w0a8xg3sdwsd" path="res://Assets/UI assets/settings_hover.png" id="5_t1dhk"]
+[ext_resource type="Texture2D" uid="uid://c42kepi55o62k" path="res://Assets/UI assets/quit.png" id="6_5egv6"]
+[ext_resource type="Texture2D" uid="uid://bwsuu7hqs8xl0" path="res://Assets/UI assets/quit_pressed.png" id="7_vtepg"]
+[ext_resource type="Texture2D" uid="uid://dc0yemp4eih2w" path="res://Assets/UI assets/quit_hover.png" id="8_8dnnj"]
+
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_erv1k"]
-size = Vector2(100, 20)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_28flt"]
-size = Vector2(100, 20)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_48xlc"]
 size = Vector2(100, 20)
 
 [node name="Main menu" type="Node" unique_id=1439380071]
@@ -40,16 +43,22 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = SubResource("PlaceholderTexture2D_erv1k")
+texture_pressed = ExtResource("1_yhxw7")
+texture_hover = ExtResource("2_trj04")
 
-[node name="Credits Button" type="TextureButton" parent="CanvasLayer/Control/HBoxContainer/Buttons" unique_id=519772493]
+[node name="Settings Button" type="TextureButton" parent="CanvasLayer/Control/HBoxContainer/Buttons" unique_id=519772493]
 layout_mode = 2
 size_flags_horizontal = 4
-texture_normal = SubResource("PlaceholderTexture2D_28flt")
+texture_normal = ExtResource("3_16hvj")
+texture_pressed = ExtResource("4_vr1f0")
+texture_hover = ExtResource("5_t1dhk")
 
 [node name="Quit Button" type="TextureButton" parent="CanvasLayer/Control/HBoxContainer/Buttons" unique_id=255236398]
 layout_mode = 2
 size_flags_horizontal = 4
-texture_normal = SubResource("PlaceholderTexture2D_48xlc")
+texture_normal = ExtResource("6_5egv6")
+texture_pressed = ExtResource("7_vtepg")
+texture_hover = ExtResource("8_8dnnj")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control/HBoxContainer" unique_id=767008705]
 layout_mode = 2
