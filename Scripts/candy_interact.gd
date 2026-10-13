@@ -10,7 +10,7 @@ var interaction_step: int = 0
 #3 - candy corn
 #4 - eyeball
 
-@onready var player: Player = $"../CharacterBody2D"
+@onready var player: Player = $"../../CharacterBody2D"
 @onready var indicator_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var icon_sprite: Sprite2D = $Sprite2D
 @onready var animation_player: AnimationPlayer = $Sprite2D/AnimationPlayer
@@ -19,7 +19,7 @@ var interaction_step: int = 0
 func _ready() -> void:
 	indicator_sprite.visible = false;
 	icon_sprite.visible = false;
-	Activated()
+	#Activated()
 
 func Activated() -> void:
 	body_entered.connect(_on_body_entered)
@@ -27,6 +27,10 @@ func Activated() -> void:
 	
 	candy_option = randi_range(0, 4)
 	print("Candy: " + str(candy_option))
+
+func ChooseCandy(input)-> void:
+	candy_option = input
+	print("Candy Changing: " + str(candy_option))
 
 func Deactivated() -> void:
 	body_entered.disconnect(_on_body_entered)
@@ -48,14 +52,12 @@ func _process(delta: float) -> void:
 	pass
 
 func interacted() -> void:
-	print("viewing candy")
 	icon_sprite.visible = true;
 	icon_sprite.frame = candy_option
 	animation_player.play("icon_idle")
 	pass
 
 func confirm() -> void:
-	print("confirmed!!")
 	animation_player.stop()
 	icon_sprite.visible = false;
 	player.picked_up_item(candy_option)

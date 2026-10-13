@@ -4,6 +4,7 @@ extends Node2D
 @onready var treater2: Sprite2D = $treater2
 @onready var treater3: Sprite2D = $treater3
 @onready var treater4: Sprite2D = $treater4
+@onready var candy_interact_activer: Node2D = $"../../CandyInteractActiver"
 
 @onready var player: Player = $".."
 
@@ -36,6 +37,7 @@ func ActiveDoor() -> void:
 	if treater_waiting == false:
 		ChooseRandomSprite()
 		await ChooseRandomDialogue()
+		candy_interact_activer.RandomizeInteracts()
 		treater_waiting = true
 	else:
 		await TreaterCheck()
@@ -47,7 +49,9 @@ func TreaterCheck() -> void:
 		await DialogueManager.dialogue_ended
 		treater_waiting = false
 		player.ClearHeldItem()
-		
+	elif player.held_item_id == -1:
+		DialogueManager.show_dialogue_balloon(load("res://Dialogue/NothingTreater.dialogue"), "start")
+		await DialogueManager.dialogue_ended
 	else: 
 		print("Wronggggg")
 		DialogueManager.show_dialogue_balloon(load("res://Dialogue/WrongTreater.dialogue"), "start")

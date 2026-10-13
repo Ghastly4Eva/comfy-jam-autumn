@@ -258,3 +258,11 @@ texture = ExtResource("24_y80gr")
 [node name="Main5" type="Sprite2D" parent="." unique_id=1280017621]
 position = Vector2(112, 64)
 texture = ExtResource("25_hscm7")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1761798648]
+z_index = -1
+offset_left = -251.0
+offset_top = -129.0
+offset_right = 514.0
+offset_bottom = 350.0
+color = Color(0.10029396, 0.055871867, 0.10563467, 1)

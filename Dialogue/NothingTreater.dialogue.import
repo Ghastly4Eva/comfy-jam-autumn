@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://dqmm3cgra8ami"
+path="res://.godot/imported/NothingTreater.dialogue-48668d2c7833131e32848c7ec1876d93.tres"
+
+[deps]
+
+source_file="res://Dialogue/NothingTreater.dialogue"
+dest_files=["res://.godot/imported/NothingTreater.dialogue-48668d2c7833131e32848c7ec1876d93.tres"]
+
+[params]
+
+defaults=true

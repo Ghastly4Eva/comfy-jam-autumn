@@ -23,8 +23,8 @@ func _ready() -> void:
 	state_machine.init(self)
 	candy_icons.visible = false;
 	can_move = false;
-	#DialogueManager.show_dialogue_balloon(load("res://Dialogue/Tutorial.dialogue"), "start")
-	#await DialogueManager.dialogue_ended
+	DialogueManager.show_dialogue_balloon(load("res://Dialogue/Tutorial.dialogue"), "start")
+	await DialogueManager.dialogue_ended
 	can_move = true;
 	pass
 
