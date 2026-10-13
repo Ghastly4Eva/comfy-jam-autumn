@@ -8,6 +8,7 @@ extends Node2D
 
 @onready var player: Player = $".."
 
+
 var wanted_item_id : int
 #0 - apple
 #1 - coco
@@ -16,6 +17,8 @@ var wanted_item_id : int
 #4 - eyeball
 
 var treater_waiting : bool = false
+var treater_dialogues: Array[int] = [1, 2, 3, 4]
+var dialogue_index: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -25,6 +28,7 @@ func _ready() -> void:
 	treater3.visible = false;
 	treater4.visible = false;
 	treater_waiting = false;
+	ShuffleTreaters()
 	pass # Replace with function body.
 
 func ShowDoor() -> void:
@@ -35,7 +39,6 @@ func HideDoor() -> void:
 
 func ActiveDoor() -> void:
 	if treater_waiting == false:
-		ChooseRandomSprite()
 		await ChooseRandomDialogue()
 		candy_interact_activer.RandomizeInteracts()
 		treater_waiting = true
@@ -57,50 +60,43 @@ func TreaterCheck() -> void:
 		DialogueManager.show_dialogue_balloon(load("res://Dialogue/WrongTreater.dialogue"), "start")
 		await DialogueManager.dialogue_ended
 
-func ChooseRandomDialogue() -> void:
-	var randnum = randi_range(1, 3)
-	if randnum == 1:
-		DialogueManager.show_dialogue_balloon(load("res://Dialogue/TreaterDialogue1.dialogue"), "start")
-		wanted_item_id = 3
-		
-	if randnum == 2:
-		DialogueManager.show_dialogue_balloon(load("res://Dialogue/TreaterDialogue2.dialogue"), "start")
-		wanted_item_id = 1
-	
-	if randnum == 3:
-		DialogueManager.show_dialogue_balloon(load("res://Dialogue/TreaterDialogue3.dialogue"), "start")
-		wanted_item_id = 4
-		
-	await DialogueManager.dialogue_ended
+func ShuffleTreaters() -> void:
+	treater_dialogues.shuffle()
+	dialogue_index = 0
 
-func ChooseRandomSprite() -> void:
-	var randnum = randi_range(1, 4)
-	if randnum == 1:
-		treater2.visible = false;
-		treater3.visible = false;
-		treater4.visible = false;
-		
-		treater1.visible = true;
-	if randnum == 2:
-		treater1.visible = false;
-		treater3.visible = false;
-		treater4.visible = false;
-		
-		treater2.visible = true;
-	if randnum == 3:
-		treater1.visible = false;
-		treater2.visible = false;
-		treater4.visible = false;
-		
-		treater3.visible = true;
-	if randnum == 4:
-		treater1.visible = false;
-		treater2.visible = false;
-		treater3.visible = false;
-		
-		treater4.visible = true;
+func ChooseRandomDialogue() -> void:
+	if dialogue_index >= treater_dialogues.size():
+		ShuffleTreaters()
+
+	var randnum = treater_dialogues[dialogue_index]
+	dialogue_index += 1
 	
-	pass
+	treater1.visible = false
+	treater2.visible = false
+	treater3.visible = false
+	treater4.visible = false
+
+	if randnum == 1:
+		treater1.visible = true
+		wanted_item_id = 3
+		DialogueManager.show_dialogue_balloon(load("res://Dialogue/TreaterDialogue1.dialogue"), "start")
+
+	if randnum == 2:
+		treater2.visible = true
+		wanted_item_id = 1
+		DialogueManager.show_dialogue_balloon(load("res://Dialogue/TreaterDialogue2.dialogue"), "start")
+
+	if randnum == 3:
+		treater3.visible = true
+		wanted_item_id = 4
+		DialogueManager.show_dialogue_balloon(load("res://Dialogue/TreaterDialogue3.dialogue"), "start")
+
+	if randnum == 4:
+		treater4.visible = true
+		wanted_item_id = 2
+		DialogueManager.show_dialogue_balloon(load("res://Dialogue/TreaterDialogue4.dialogue"), "start")
+
+	await DialogueManager.dialogue_ended
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

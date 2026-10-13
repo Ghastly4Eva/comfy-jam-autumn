@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dsa15ynv6mciy" path="res://Assets/Levels/Level_one/Bed-6.png" id="6_v158k"]
 [ext_resource type="Texture2D" uid="uid://bukjb8xi1anyg" path="res://Assets/Levels/Level_one/Bath-1.png" id="7_h4fw4"]
 [ext_resource type="Texture2D" uid="uid://cwscwtoeb5yen" path="res://Assets/Anims/TheCat.png" id="8_v158k"]
-[ext_resource type="Script" uid="uid://blj3qrauoxe7y" path="res://Scenes/candy_interact_activer.gd" id="9_85qyi"]
+[ext_resource type="Script" uid="uid://blj3qrauoxe7y" path="res://Scripts/candy_interact_activer.gd" id="9_85qyi"]
 [ext_resource type="PackedScene" uid="uid://bw51447if30p0" path="res://Scenes/CandyInteractions/CandyInteractBath1.tscn" id="10_ldgsr"]
 [ext_resource type="PackedScene" uid="uid://b7mlnuyy4mnew" path="res://Scenes/CandyInteractions/CandyInteractBath2.tscn" id="11_o5yvi"]
 [ext_resource type="PackedScene" uid="uid://bg4jky0xoay17" path="res://Scenes/CandyInteractions/CandyInteractBed3.tscn" id="11_rku1e"]

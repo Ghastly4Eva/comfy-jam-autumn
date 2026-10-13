@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://61dvnpyql0hd"]
+
+[node name="EndingCutscene" type="Node2D" unique_id=707992137]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1292364804]
+z_index = -1
+offset_left = -251.0
+offset_top = -129.0
+offset_right = 514.0
+offset_bottom = 350.0
+color = Color(0.10029396, 0.055871867, 0.10563467, 1)

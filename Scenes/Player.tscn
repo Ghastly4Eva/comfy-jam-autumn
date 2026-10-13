@@ -5,7 +5,9 @@
 [ext_resource type="Script" uid="uid://jhf4mi1ngnge" path="res://Scripts/PlayerStateMachine/state_machine.gd" id="3_5ixxa"]
 [ext_resource type="Script" uid="uid://civ3yblj0q0ok" path="res://Scripts/PlayerStateMachine/idle_state.gd" id="4_nn08x"]
 [ext_resource type="Script" uid="uid://bumh84hinqd25" path="res://Scripts/PlayerStateMachine/walk_state.gd" id="5_52ee3"]
+[ext_resource type="FontFile" uid="uid://5dnye6qwfa4r" path="res://Fonts/m5x7.ttf" id="6_bhhdu"]
 [ext_resource type="Texture2D" uid="uid://bbisgmosbinth" path="res://Assets/CandyIcons.png" id="6_nn08x"]
+[ext_resource type="Script" uid="uid://y8rwpi0wigdk" path="res://Scripts/TimeLabel.gd" id="7_megsn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3wro3"]
 size = Vector2(49.389576, 39.302265)
@@ -267,11 +269,10 @@ position = Vector2(0, -15)
 sprite_frames = SubResource("SpriteFrames_nnl0l")
 animation = &"throwawayitem"
 
-[node name="StateMachine" type="Node" parent="." unique_id=509428797 node_paths=PackedStringArray("idle", "walk", "throw_item", "starting_state")]
+[node name="StateMachine" type="Node" parent="." unique_id=509428797 node_paths=PackedStringArray("idle", "walk", "starting_state")]
 script = ExtResource("3_5ixxa")
 idle = NodePath("Idle")
 walk = NodePath("Walk")
-throw_item = NodePath("")
 starting_state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="StateMachine" unique_id=2027700464]
@@ -285,6 +286,25 @@ animation_name = "walk_down"
 move_speed = 75.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1281155369]
+
+[node name="Control" type="Control" parent="Camera2D" unique_id=1855567811]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TimeLabel" type="Label" parent="Camera2D" unique_id=1258838757]
+texture_filter = 1
+offset_left = -150.0
+offset_top = -85.0
+offset_right = -108.0
+offset_bottom = -62.0
+theme_override_fonts/font = ExtResource("6_bhhdu")
+theme_override_font_sizes/font_size = 12
+text = "0:45"
+script = ExtResource("7_megsn")
 
 [node name="CandyIcons" type="Sprite2D" parent="." unique_id=1878789748]
 visible = false
