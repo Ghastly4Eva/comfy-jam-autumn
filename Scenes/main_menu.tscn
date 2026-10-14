@@ -86,11 +86,42 @@ texture_normal = ExtResource("6_5egv6")
 texture_pressed = ExtResource("7_vtepg")
 texture_hover = ExtResource("8_8dnnj")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control/HBoxContainer" unique_id=767008705]
+[node name="Display" type="Container" parent="CanvasLayer/Control/HBoxContainer" unique_id=2013167892]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Settings Menu" type="Control" parent="CanvasLayer/Control/HBoxContainer/Display" unique_id=1231195636]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color(1, 1, 1, 0)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/HBoxContainer/Display/Settings Menu" unique_id=1877727255]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 3.9250002
+anchor_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CheckButton" type="CheckButton" parent="CanvasLayer/Control/HBoxContainer/Display/Settings Menu/VBoxContainer" unique_id=1100750901]
+layout_mode = 2
+text = "Music"
+
+[node name="CheckButton2" type="CheckButton" parent="CanvasLayer/Control/HBoxContainer/Display/Settings Menu/VBoxContainer" unique_id=404018217]
+layout_mode = 2
+text = "SFX"
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/HBoxContainer/Display/Settings Menu/VBoxContainer" unique_id=225161565]
+layout_mode = 2
+text = "Volume"
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer/Control/HBoxContainer/Display/Settings Menu/VBoxContainer" unique_id=831835129]
+layout_mode = 2
+
+[node name="Credits" type="RichTextLabel" parent="CanvasLayer/Control/HBoxContainer/Display" unique_id=220742740]
+visible = false
+layout_mode = 2
 
 [node name="StartScreenBackground1NoOutlines" type="AnimatedSprite2D" parent="CanvasLayer/Control/HBoxContainer" unique_id=205253684]
 z_index = -1
