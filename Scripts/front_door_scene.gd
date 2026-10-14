@@ -5,6 +5,7 @@ extends Node2D
 @onready var treater3: Sprite2D = $treater3
 @onready var treater4: Sprite2D = $treater4
 @onready var candy_interact_activer: Node2D = $"../../CandyInteractActiver"
+@onready var the_cat: Node2D = $"../../TheCat"
 
 @onready var player: Player = $".."
 
@@ -34,13 +35,21 @@ func _ready() -> void:
 
 func ShowDoor() -> void:
 	visible = true;
+	if treater_waiting == false:
+		treater1.visible = false
+		treater2.visible = false
+		treater3.visible = false
+		treater4.visible = false
+	
 
 func HideDoor() -> void:
 	visible = false;
 
 func ActiveDoor() -> void:
 	if treater_waiting == false:
+		
 		await ChooseRandomDialogue()
+		the_cat.ChangeLocation()
 		candy_interact_activer.RandomizeInteracts()
 		treater_waiting = true
 	else:

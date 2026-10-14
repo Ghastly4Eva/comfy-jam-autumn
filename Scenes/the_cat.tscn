@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dbugqsgcwre7h"]
+
+[ext_resource type="Texture2D" uid="uid://sjhxehk6hlg7" path="res://Assets/Anims/TheCat-Sheet-export.png" id="1_pro32"]
+[ext_resource type="Script" uid="uid://baetwd6q8e3f1" path="res://Scenes/catscript.gd" id="2_qkqtp"]
+
+[node name="TheCat" type="Node2D" unique_id=546496041]
+y_sort_enabled = true
+script = ExtResource("2_qkqtp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=912680251]
+position = Vector2(1, -10)
+texture = ExtResource("1_pro32")
+hframes = 5
