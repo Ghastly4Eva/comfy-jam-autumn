@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://dsf5ar1a0fi6r"
+path="res://.godot/imported/CorrectTreater4.dialogue-e3b6bffd6f547204436067ef57bda3e0.tres"
+
+[deps]
+
+source_file="res://Dialogue/CorrectTreater4.dialogue"
+dest_files=["res://.godot/imported/CorrectTreater4.dialogue-e3b6bffd6f547204436067ef57bda3e0.tres"]
+
+[params]
+
+defaults=true

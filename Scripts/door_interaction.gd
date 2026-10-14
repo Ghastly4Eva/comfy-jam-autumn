@@ -22,6 +22,11 @@ func _process(delta: float) -> void:
 		await ScreenTransition.fade_out()
 		await door_scene.ShowDoor()
 		await ScreenTransition.fade_in()
+		
+		await get_tree().create_timer(0.2).timeout
+		
+		await ScreenTransition.fade_out()
+		ScreenTransition.fade_in()
 		await door_scene.ActiveDoor()
 		
 		await ScreenTransition.fade_out()

@@ -50,6 +50,7 @@ position = Vector2(64, 120)
 
 [node name="FrontDoorScene" parent="CharacterBody2D" unique_id=294255432 instance=ExtResource("1_3dryh")]
 visible = false
+z_index = 10
 
 [node name="Map" parent="." unique_id=1404622031 instance=ExtResource("2_wrm1d")]
 

@@ -49,8 +49,19 @@ func ActiveDoor() -> void:
 func TreaterCheck() -> void:
 	if wanted_item_id == player.held_item_id:
 		print("Correct!!")
-		DialogueManager.show_dialogue_balloon(load("res://Dialogue/CorrectTreater.dialogue"), "start")
-		await DialogueManager.dialogue_ended
+		if treater1.visible == true:
+			DialogueManager.show_dialogue_balloon(load("res://Dialogue/CorrectTreater1.dialogue"), "start")
+			await DialogueManager.dialogue_ended
+		elif treater2.visible == true:
+			DialogueManager.show_dialogue_balloon(load("res://Dialogue/CorrectTreater2.dialogue"), "start")
+			await DialogueManager.dialogue_ended
+		elif treater3.visible == true:
+			DialogueManager.show_dialogue_balloon(load("res://Dialogue/CorrectTreater3.dialogue"), "start")
+			await DialogueManager.dialogue_ended
+		elif treater4.visible == true:
+			DialogueManager.show_dialogue_balloon(load("res://Dialogue/CorrectTreater4.dialogue"), "start")
+			await DialogueManager.dialogue_ended
+		
 		treater_waiting = false
 		player.AdvanceTime()
 		player.ClearHeldItem()

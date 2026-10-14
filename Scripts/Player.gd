@@ -24,7 +24,8 @@ func _ready() -> void:
 	state_machine.init(self)
 	candy_icons.visible = false;
 	can_move = false;
-	time_label.text = "7:00 PM"
+	time_label.text = "8:00 PM"
+	
 	DialogueManager.show_dialogue_balloon(load("res://Dialogue/Tutorial.dialogue"), "start")
 	await DialogueManager.dialogue_ended
 	can_move = true;
@@ -61,7 +62,8 @@ func ClearHeldItem() -> void:
 
 func AdvanceTime() -> void:
 	if time_label.text == "11:00 PM":
-		time_label.text = "12:00 PM"
+		await ScreenTransition.fade_out()
+		get_tree().change_scene_to_file("res://Scenes/EndingCutscene.tscn")
 	
 	if time_label.text == "10:00 PM":
 		time_label.text = "11:00 PM"
