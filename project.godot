@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ComfyJamAutumn"
-run/main_scene="uid://dredun36gllmm"
+run/main_scene="uid://berwnwptsfqwj"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://Assets/icon.svg"
 
@@ -85,7 +85,7 @@ ThrowItem={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Dialogue/Intro.dialogue", "res://Dialogue/TreaterDialogue1.dialogue", "res://Dialogue/TreaterDialogue2.dialogue", "res://Dialogue/Tutorial.dialogue", "res://Dialogue/TreaterDialogue3.dialogue", "res://Dialogue/WrongTreater.dialogue", "res://Dialogue/CorrectTreater.dialogue", "res://Dialogue/NothingTreater.dialogue", "res://Dialogue/TreaterDialogue4.dialogue", "res://Dialogue/Treater1Variant0.dialogue", "res://Dialogue/Treater1Variant1.dialogue", "res://Dialogue/Treater1Variant2.dialogue", "res://Dialogue/Treater1Variant3.dialogue", "res://Dialogue/Treater1Variant4.dialogue", "res://Dialogue/Treater2Variant0.dialogue", "res://Dialogue/Treater2Variant1.dialogue", "res://Dialogue/Treater2Variant2.dialogue", "res://Dialogue/Treater2Variant3.dialogue", "res://Dialogue/Treater2Variant4.dialogue", "res://Dialogue/Treater3Variant0.dialogue", "res://Dialogue/Treater3Variant1.dialogue", "res://Dialogue/Treater3Variant2.dialogue", "res://Dialogue/Treater3Variant3.dialogue", "res://Dialogue/Treater3Variant4.dialogue", "res://Dialogue/Treater4Variant0.dialogue", "res://Dialogue/Treater4Variant1.dialogue", "res://Dialogue/Treater4Variant2.dialogue", "res://Dialogue/Treater4Variant3.dialogue", "res://Dialogue/Treater4Variant4.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Dialogue/Intro.dialogue", "res://Dialogue/Tutorial.dialogue", "res://Dialogue/WrongTreater.dialogue", "res://Dialogue/CorrectTreater.dialogue", "res://Dialogue/NothingTreater.dialogue", "res://Dialogue/Treater1Variant0.dialogue", "res://Dialogue/Treater1Variant1.dialogue", "res://Dialogue/Treater1Variant2.dialogue", "res://Dialogue/Treater1Variant3.dialogue", "res://Dialogue/Treater1Variant4.dialogue", "res://Dialogue/Treater2Variant0.dialogue", "res://Dialogue/Treater2Variant1.dialogue", "res://Dialogue/Treater2Variant2.dialogue", "res://Dialogue/Treater2Variant3.dialogue", "res://Dialogue/Treater2Variant4.dialogue", "res://Dialogue/Treater3Variant0.dialogue", "res://Dialogue/Treater3Variant1.dialogue", "res://Dialogue/Treater3Variant2.dialogue", "res://Dialogue/Treater3Variant3.dialogue", "res://Dialogue/Treater3Variant4.dialogue", "res://Dialogue/Treater4Variant0.dialogue", "res://Dialogue/Treater4Variant1.dialogue", "res://Dialogue/Treater4Variant2.dialogue", "res://Dialogue/Treater4Variant3.dialogue", "res://Dialogue/Treater4Variant4.dialogue")
 
 [physics]
 

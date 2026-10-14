@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://berwnwptsfqwj"]
 
+[ext_resource type="Script" uid="uid://d3imnsyalcgk" path="res://Scripts/Start_menu.gd" id="1_8dnnj"]
+[ext_resource type="Texture2D" uid="uid://ck5nmkibhcv0q" path="res://Assets/UI assets/play.png" id="1_t1dhk"]
 [ext_resource type="Texture2D" uid="uid://dove8yhhe0e6m" path="res://Assets/UI assets/play_pressed.png" id="1_yhxw7"]
 [ext_resource type="Texture2D" uid="uid://djdiw34qew641" path="res://Assets/UI assets/play_hover.png" id="2_trj04"]
 [ext_resource type="Texture2D" uid="uid://der1qr55858af" path="res://Assets/UI assets/settings.png" id="3_16hvj"]
@@ -11,9 +13,22 @@
 [ext_resource type="Texture2D" uid="uid://c42kepi55o62k" path="res://Assets/UI assets/quit.png" id="6_5egv6"]
 [ext_resource type="Texture2D" uid="uid://bwsuu7hqs8xl0" path="res://Assets/UI assets/quit_pressed.png" id="7_vtepg"]
 [ext_resource type="Texture2D" uid="uid://dc0yemp4eih2w" path="res://Assets/UI assets/quit_hover.png" id="8_8dnnj"]
+[ext_resource type="Texture2D" uid="uid://dqrbiepim6i30" path="res://Assets/start_screen_background_1_no_outlines.png" id="14_m3bi6"]
+[ext_resource type="Texture2D" uid="uid://dofmd1tvwfov" path="res://Assets/start_screen_background_2_no_outlines.png" id="15_wyh8j"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_erv1k"]
-size = Vector2(100, 20)
+[sub_resource type="SpriteFrames" id="SpriteFrames_nnl0l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_m3bi6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_wyh8j")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 1.0
+}]
 
 [node name="Main menu" type="Node" unique_id=1439380071]
 
@@ -28,6 +43,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
+script = ExtResource("1_8dnnj")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control" unique_id=1120383847]
 layout_mode = 1
@@ -45,7 +61,7 @@ alignment = 1
 [node name="Start Button" type="TextureButton" parent="CanvasLayer/Control/HBoxContainer/Buttons" unique_id=1250812364]
 layout_mode = 2
 size_flags_horizontal = 4
-texture_normal = SubResource("PlaceholderTexture2D_erv1k")
+texture_normal = ExtResource("1_t1dhk")
 texture_pressed = ExtResource("1_yhxw7")
 texture_hover = ExtResource("2_trj04")
 
@@ -74,3 +90,17 @@ texture_hover = ExtResource("8_8dnnj")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+color = Color(1, 1, 1, 0)
+
+[node name="StartScreenBackground1NoOutlines" type="AnimatedSprite2D" parent="CanvasLayer/Control/HBoxContainer" unique_id=205253684]
+z_index = -1
+position = Vector2(160, 90)
+sprite_frames = SubResource("SpriteFrames_nnl0l")
+autoplay = "default"
+frame = 1
+frame_progress = 0.34984854
+
+[connection signal="pressed" from="CanvasLayer/Control/HBoxContainer/Buttons/Start Button" to="CanvasLayer/Control" method="_on_start_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/HBoxContainer/Buttons/Credits Button" to="CanvasLayer/Control" method="_on_credits_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/HBoxContainer/Buttons/Settings Button" to="CanvasLayer/Control" method="_on_settings_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/HBoxContainer/Buttons/Quit Button" to="CanvasLayer/Control" method="_on_quit_button_pressed"]
