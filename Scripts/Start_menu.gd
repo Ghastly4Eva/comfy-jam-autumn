@@ -11,7 +11,7 @@ func _ready() -> void:
 
 
 func _on_start_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/game.tscn")
+	get_tree().change_scene_to_file("res://Scenes/IntroCutscene.tscn")
 	pass # Replace with function body.
 
 
