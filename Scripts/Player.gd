@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var animations: AnimatedSprite2D = $AnimatedSprite2D
 @onready var state_machine: Node = $StateMachine
 @onready var candy_icons: Sprite2D = $CandyIcons
+@onready var time_label: Label = $Camera2D/TimeLabel
 
 
 var input_direction: Vector2
@@ -55,6 +56,24 @@ func ClearHeldItem() -> void:
 	is_holding_item = false;
 	candy_icons.visible = false;
 	held_item_id = -1;
+
+func AdvanceTime() -> void:
+	if time_label.text == "11:00":
+		time_label.text = "12:00"
+	
+	if time_label.text == "10:00":
+		time_label.text = "11:00"
+	
+	if time_label.text == "9:00":
+		time_label.text = "10:00"
+	
+	if time_label.text == "8:00":
+		time_label.text = "9:00"
+	
+	if time_label.text == "7:00":
+		time_label.text = "8:00"
+	
+	pass
 
 func _process(delta: float) -> void:
 	state_machine.process_frame(delta)

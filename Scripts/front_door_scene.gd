@@ -18,10 +18,11 @@ var wanted_item_id : int
 
 var treater_waiting : bool = false
 var treater_dialogues: Array[int] = [1, 2, 3, 4]
-var dialogue_index: int = 0
+var treater_index: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
 	visible = false;
 	treater1.visible = false;
 	treater2.visible = false;
@@ -51,6 +52,7 @@ func TreaterCheck() -> void:
 		DialogueManager.show_dialogue_balloon(load("res://Dialogue/CorrectTreater.dialogue"), "start")
 		await DialogueManager.dialogue_ended
 		treater_waiting = false
+		player.AdvanceTime()
 		player.ClearHeldItem()
 	elif player.held_item_id == -1:
 		DialogueManager.show_dialogue_balloon(load("res://Dialogue/NothingTreater.dialogue"), "start")
@@ -61,41 +63,99 @@ func TreaterCheck() -> void:
 		await DialogueManager.dialogue_ended
 
 func ShuffleTreaters() -> void:
+	treater_dialogues = [1, 2, 3, 4]
 	treater_dialogues.shuffle()
-	dialogue_index = 0
+	treater_index = 0
 
 func ChooseRandomDialogue() -> void:
-	if dialogue_index >= treater_dialogues.size():
+	if treater_index >= treater_dialogues.size():
 		ShuffleTreaters()
-
-	var randnum = treater_dialogues[dialogue_index]
-	dialogue_index += 1
+	
+	var randnum = treater_dialogues[treater_index]
+	treater_index += 1
 	
 	treater1.visible = false
 	treater2.visible = false
 	treater3.visible = false
 	treater4.visible = false
-
+	
+	var variant = randi_range(0, 4)
 	if randnum == 1:
 		treater1.visible = true
-		wanted_item_id = 3
-		DialogueManager.show_dialogue_balloon(load("res://Dialogue/TreaterDialogue1.dialogue"), "start")
-
-	if randnum == 2:
+		
+		if variant == 0:
+			DialogueManager.show_dialogue_balloon(load("res://Dialogue/Treater1Variant0.dialogue"), "start")
+			wanted_item_id = 0
+		elif variant == 1:
+			DialogueManager.show_dialogue_balloon(load("res://Dialogue/Treater1Variant1.dialogue"), "start")
+			wanted_item_id = 1
+		elif variant == 2:
+			DialogueManager.show_dialogue_balloon(load("res://Dialogue/Treater1Variant2.dialogue"), "start")
+			wanted_item_id = 2
+		elif variant == 3:
+			DialogueManager.show_dialogue_balloon(load("res://Dialogue/Treater1Variant3.dialogue"), "start")
+			wanted_item_id = 3
+		elif variant == 4:
+			DialogueManager.show_dialogue_balloon(load("res://Dialogue/Treater1Variant4.dialogue"), "start")
+			wanted_item_id = 4
+	
+	elif randnum == 2:
 		treater2.visible = true
-		wanted_item_id = 1
-		DialogueManager.show_dialogue_balloon(load("res://Dialogue/TreaterDialogue2.dialogue"), "start")
-
-	if randnum == 3:
+		
+		if variant == 0:
+			DialogueManager.show_dialogue_balloon(load("res://Dialogue/Treater2Variant0.dialogue"), "start")
+			wanted_item_id = 0
+		elif variant == 1:
+			DialogueManager.show_dialogue_balloon(load("res://Dialogue/Treater2Variant1.dialogue"), "start")
+			wanted_item_id = 1
+		elif variant == 2:
+			DialogueManager.show_dialogue_balloon(load("res://Dialogue/Treater2Variant2.dialogue"), "start")
+			wanted_item_id = 2
+		elif variant == 3:
+			DialogueManager.show_dialogue_balloon(load("res://Dialogue/Treater2Variant3.dialogue"), "start")
+			wanted_item_id = 3
+		elif variant == 4:
+			DialogueManager.show_dialogue_balloon(load("res://Dialogue/Treater2Variant4.dialogue"), "start")
+			wanted_item_id = 4
+	
+	elif randnum == 3:
 		treater3.visible = true
-		wanted_item_id = 4
-		DialogueManager.show_dialogue_balloon(load("res://Dialogue/TreaterDialogue3.dialogue"), "start")
-
-	if randnum == 4:
+		
+		if variant == 0:
+			DialogueManager.show_dialogue_balloon(load("res://Dialogue/Treater3Variant0.dialogue"), "start")
+			wanted_item_id = 0
+		elif variant == 1:
+			DialogueManager.show_dialogue_balloon(load("res://Dialogue/Treater3Variant1.dialogue"), "start")
+			wanted_item_id = 1
+		elif variant == 2:
+			DialogueManager.show_dialogue_balloon(load("res://Dialogue/Treater3Variant2.dialogue"), "start")
+			wanted_item_id = 2
+		elif variant == 3:
+			DialogueManager.show_dialogue_balloon(load("res://Dialogue/Treater3Variant3.dialogue"), "start")
+			wanted_item_id = 3
+		elif variant == 4:
+			DialogueManager.show_dialogue_balloon(load("res://Dialogue/Treater3Variant4.dialogue"), "start")
+			wanted_item_id = 4
+	
+	elif randnum == 4:
 		treater4.visible = true
-		wanted_item_id = 2
-		DialogueManager.show_dialogue_balloon(load("res://Dialogue/TreaterDialogue4.dialogue"), "start")
-
+		
+		if variant == 0:
+			DialogueManager.show_dialogue_balloon(load("res://Dialogue/Treater4Variant0.dialogue"), "start")
+			wanted_item_id = 0
+		elif variant == 1:
+			DialogueManager.show_dialogue_balloon(load("res://Dialogue/Treater4Variant1.dialogue"), "start")
+			wanted_item_id = 1
+		elif variant == 2:
+			DialogueManager.show_dialogue_balloon(load("res://Dialogue/Treater4Variant2.dialogue"), "start")
+			wanted_item_id = 2
+		elif variant == 3:
+			DialogueManager.show_dialogue_balloon(load("res://Dialogue/Treater4Variant3.dialogue"), "start")
+			wanted_item_id = 3
+		elif variant == 4:
+			DialogueManager.show_dialogue_balloon(load("res://Dialogue/Treater4Variant4.dialogue"), "start")
+			wanted_item_id = 4
+	
 	await DialogueManager.dialogue_ended
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

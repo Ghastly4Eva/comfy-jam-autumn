@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://do0vrf5tc6743"
+path="res://.godot/imported/Treater2Variant2.dialogue-c6c382eac01cc367158001a36576cf46.tres"
+
+[deps]
+
+source_file="res://Dialogue/Treater2Variant2.dialogue"
+dest_files=["res://.godot/imported/Treater2Variant2.dialogue-c6c382eac01cc367158001a36576cf46.tres"]
+
+[params]
+
+defaults=true

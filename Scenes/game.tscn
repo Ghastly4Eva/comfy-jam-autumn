@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://g1rnbv0m8fly" path="res://Scenes/CandyInteractions/CandyInteractKitchen4.tscn" id="15_nb51f"]
 [ext_resource type="PackedScene" uid="uid://b2pf1xon726al" path="res://Scenes/CandyInteractions/CandyInteractMain4.tscn" id="16_nnt18"]
 [ext_resource type="PackedScene" uid="uid://dcbpijk0mx7u1" path="res://Scenes/CandyInteractions/CandyInteractMain5.tscn" id="17_ewbju"]
+[ext_resource type="Texture2D" uid="uid://bcqtqv3xxy5bd" path="res://Assets/Levels/Level_one/Kitchen-5.png" id="19_exi56"]
 
 [node name="Game" type="Node2D" unique_id=1782714123]
 
@@ -35,6 +36,12 @@ texture = ExtResource("6_v158k")
 [node name="Bath1" type="Sprite2D" parent="TopMapLayer" unique_id=1575149825]
 position = Vector2(112, 64)
 texture = ExtResource("7_h4fw4")
+
+[node name="Chair" type="Sprite2D" parent="TopMapLayer" unique_id=1478010543]
+z_index = 4
+y_sort_enabled = true
+position = Vector2(112, 66)
+texture = ExtResource("19_exi56")
 
 [node name="CharacterBody2D" parent="." unique_id=1182345236 groups=["player"] instance=ExtResource("1_qxrlw")]
 z_index = 4
