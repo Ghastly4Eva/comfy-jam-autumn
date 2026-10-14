@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://61dvnpyql0hd"]
 
+[ext_resource type="Script" uid="uid://boi1ke457paum" path="res://Scripts/ending_cutscene.gd" id="1_j1kru"]
+
 [node name="EndingCutscene" type="Node2D" unique_id=707992137]
+script = ExtResource("1_j1kru")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1292364804]
 z_index = -1

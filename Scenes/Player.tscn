@@ -301,8 +301,7 @@ offset_top = -85.0
 offset_right = -108.0
 offset_bottom = -62.0
 theme_override_fonts/font = ExtResource("6_bhhdu")
-theme_override_font_sizes/font_size = 12
-text = "7:00"
+text = "7:00 PM"
 
 [node name="CandyIcons" type="Sprite2D" parent="." unique_id=1878789748]
 visible = false
