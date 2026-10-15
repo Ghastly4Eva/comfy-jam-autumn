@@ -17,19 +17,35 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if player_in_range and Input.is_action_just_pressed("ui_accept"):
-		player.can_move = false;
-		player_in_range = false;
-		await ScreenTransition.fade_out()
-		await door_scene.ShowDoor()
-		await ScreenTransition.fade_in()
-		
-		await door_scene.ActiveDoor()
-		
-		await ScreenTransition.fade_out()
-		door_scene.HideDoor()
-		await ScreenTransition.fade_in()
-		player.can_move = true;
-		player_in_range = true;
+		if player.time_label.text == "10:00 PM":
+			player.can_move = false;
+			player_in_range = false;
+			await ScreenTransition.fade_out()
+			await door_scene.ShowDoorAdult()
+			await ScreenTransition.fade_in()
+			
+			await door_scene.AdultArrivesDoor()
+			
+			await ScreenTransition.fade_out()
+			door_scene.HideDoor()
+			await ScreenTransition.fade_in()
+			player.can_move = true;
+			player_in_range = true;
+			pass
+		else:
+			player.can_move = false;
+			player_in_range = false;
+			await ScreenTransition.fade_out()
+			await door_scene.ShowDoor()
+			await ScreenTransition.fade_in()
+			
+			await door_scene.ActiveDoor()
+			
+			await ScreenTransition.fade_out()
+			door_scene.HideDoor()
+			await ScreenTransition.fade_in()
+			player.can_move = true;
+			player_in_range = true;
 		
 	pass
 

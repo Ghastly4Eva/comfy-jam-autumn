@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://c4ke2xmv7qslu"]
+
+[ext_resource type="Script" uid="uid://bwp4y4nu4p8mw" path="res://Scripts/front_door_scene.gd" id="1_hp2ms"]
+[ext_resource type="Texture2D" uid="uid://dam4123dte1iw" path="res://Assets/DoorRecolor2.png" id="2_skgob"]
+[ext_resource type="Texture2D" uid="uid://b3ub2r4ia015u" path="res://Assets/ChildWitch.png" id="3_skgob"]
+[ext_resource type="Texture2D" uid="uid://cvlqyt8mjkbxv" path="res://Assets/ChildGhost.png" id="4_csabw"]
+[ext_resource type="Texture2D" uid="uid://dw1qwck4hkbyb" path="res://Assets/ChildBug.png" id="5_5nf7f"]
+[ext_resource type="Texture2D" uid="uid://cgddq2hu2rh6e" path="res://Assets/ChildMonster.png" id="6_5nf7f"]
+[ext_resource type="Texture2D" uid="uid://b5gsr1keka6ks" path="res://Assets/pan_up_adult_party_arrival_thing.png" id="7_ojs0o"]
+
+[sub_resource type="Animation" id="Animation_ojs0o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -28)]
+}
+
+[sub_resource type="Animation" id="Animation_q27c2"]
+resource_name = "pan_up"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -28), Vector2(0, 28)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_am57u"]
+_data = {
+&"RESET": SubResource("Animation_ojs0o"),
+&"pan_up": SubResource("Animation_q27c2")
+}
+
+[node name="FrontDoorScene" type="Node2D" unique_id=294255432]
+z_index = 2
+script = ExtResource("1_hp2ms")
+
+[node name="background" type="Sprite2D" parent="." unique_id=1375427615]
+texture = ExtResource("2_skgob")
+
+[node name="treater1" type="Sprite2D" parent="." unique_id=163932516]
+visible = false
+texture = ExtResource("3_skgob")
+
+[node name="treater2" type="Sprite2D" parent="." unique_id=1265455475]
+visible = false
+texture = ExtResource("4_csabw")
+
+[node name="treater3" type="Sprite2D" parent="." unique_id=1990532259]
+visible = false
+texture = ExtResource("5_5nf7f")
+
+[node name="treater4" type="Sprite2D" parent="." unique_id=814456104]
+visible = false
+texture = ExtResource("6_5nf7f")
+
+[node name="PanUpAdultPartyArrivalThing" type="Sprite2D" parent="." unique_id=1752022184]
+position = Vector2(0, -28)
+texture = ExtResource("7_ojs0o")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PanUpAdultPartyArrivalThing" unique_id=572031954]
+libraries/ = SubResource("AnimationLibrary_am57u")

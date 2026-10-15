@@ -6,6 +6,10 @@ extends CharacterBody2D
 @onready var state_machine: Node = $StateMachine
 @onready var candy_icons: Sprite2D = $CandyIcons
 @onready var time_label: Label = $Camera2D/TimeLabel
+@onready var front_door_scene: Node2D = $FrontDoorScene
+
+@onready var pick_up: AudioStreamPlayer2D = $pick_up
+@onready var drop_item: AudioStreamPlayer2D = $drop_item
 
 
 var input_direction: Vector2
@@ -24,7 +28,7 @@ func _ready() -> void:
 	state_machine.init(self)
 	candy_icons.visible = false;
 	can_move = false;
-	time_label.text = "8:00 PM"
+	time_label.text = "7:00 PM"
 	
 	DialogueManager.show_dialogue_balloon(load("res://Dialogue/Tutorial.dialogue"), "start")
 	await DialogueManager.dialogue_ended
@@ -39,6 +43,7 @@ func get_input():
 	
 	if Input.is_action_just_pressed("ThrowItem") and is_holding_item == true:
 		ClearHeldItem()
+		drop_item.play()
 
 func _unhandled_input(event: InputEvent) -> void:
 	state_machine.process_input(event)
@@ -53,29 +58,27 @@ func picked_up_item(passeditem: int) -> void:
 	candy_icons.frame = passeditem;
 	held_item_id = passeditem;
 	is_holding_item = true;
+	
+	pick_up.play()
 	pass
 
 func ClearHeldItem() -> void:
 	is_holding_item = false;
 	candy_icons.visible = false;
 	held_item_id = -1;
+	
 
 func AdvanceTime() -> void:
-	if time_label.text == "11:00 PM":
-		await ScreenTransition.fade_out()
-		get_tree().change_scene_to_file("res://Scenes/EndingCutscene.tscn")
-	
-	if time_label.text == "10:00 PM":
-		time_label.text = "11:00 PM"
-	
-	if time_label.text == "9:00 PM":
-		time_label.text = "10:00 PM"
-	
-	if time_label.text == "8:00 PM":
-		time_label.text = "9:00 PM"
-	
 	if time_label.text == "7:00 PM":
 		time_label.text = "8:00 PM"
+	elif time_label.text == "8:00 PM":
+		time_label.text = "9:00 PM"
+	elif time_label.text == "9:00 PM":
+		time_label.text = "10:00 PM"
+	elif time_label.text == "10:00 PM":
+		time_label.text = "11:00 PM"
+		await ScreenTransition.fade_out()
+		get_tree().change_scene_to_file("res://Scenes/EndingCutscene.tscn")
 	
 	pass
 

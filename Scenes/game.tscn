@@ -20,6 +20,8 @@
 [ext_resource type="PackedScene" uid="uid://dcbpijk0mx7u1" path="res://Scenes/CandyInteractions/CandyInteractMain5.tscn" id="17_ewbju"]
 [ext_resource type="Texture2D" uid="uid://bcqtqv3xxy5bd" path="res://Assets/Levels/Level_one/Kitchen-5.png" id="19_exi56"]
 [ext_resource type="AudioStream" uid="uid://bgyad56gu75oq" path="res://Audio/comfy jam fall music beta.mp3" id="20_7nbq1"]
+[ext_resource type="AudioStream" uid="uid://dox8am8vvmxrs" path="res://Audio/door_knocking.mp3" id="21_7t8sx"]
+[ext_resource type="Script" uid="uid://dx6c82kl0yfj6" path="res://Scripts/knocking.gd" id="22_mg4q0"]
 
 [node name="Game" type="Node2D" unique_id=1782714123]
 
@@ -39,7 +41,7 @@ position = Vector2(112, 64)
 texture = ExtResource("7_h4fw4")
 
 [node name="Chair" type="Sprite2D" parent="TopMapLayer" unique_id=1478010543]
-z_index = 4
+z_index = 3
 y_sort_enabled = true
 position = Vector2(112, 66)
 texture = ExtResource("19_exi56")
@@ -91,7 +93,13 @@ position = Vector2(120, 28)
 [node name="CandyInteractionMain5" parent="CandyInteractActiver" unique_id=1512247411 instance=ExtResource("17_ewbju")]
 position = Vector2(156, 29)
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=644640142]
+[node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=644640142]
 stream = ExtResource("20_7nbq1")
 autoplay = true
 parameters/looping = true
+
+[node name="Knocking" type="AudioStreamPlayer2D" parent="." unique_id=1702391210]
+stream = ExtResource("21_7t8sx")
+volume_db = -7.0
+parameters/looping = true
+script = ExtResource("22_mg4q0")

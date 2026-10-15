@@ -1,6 +1,7 @@
 extends CanvasLayer
 ## A basic dialogue balloon for use with Dialogue Manager.
 
+@onready var dialoguebleep: AudioStreamPlayer2D = $dialoguebleep
 
 ## The dialogue resource
 @export var dialogue_resource: DialogueResource
@@ -213,6 +214,25 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 
 func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 	next(response.next_id)
+
+
+#My code lol, ty Jelly!!!
+func _on_dialogue_label_spoke(_letter: String, letter_index: int, _speed: float) -> void:
+	if _speed >= 1:
+		if letter_index % 4 == 0:
+			var audio = dialoguebleep.duplicate()
+			add_child(audio)
+			audio.pitch_scale = randf_range(0.8, 1.0)
+			audio.play()
+			await audio.finished
+			audio.queue_free()
+	else:
+		var audio = dialoguebleep.ui_talk.duplicate()
+		add_child(audio)
+		audio.pitch_scale = randf_range(0.8, 1.0)
+		audio.play()
+		await audio.finished
+		audio.queue_free()
 
 
 #endregion

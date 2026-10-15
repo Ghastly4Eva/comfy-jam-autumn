@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b20fogni20sxt" path="res://DialogueBalloon/balloon.gd" id="1_s2gbs"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/nodes/dialogue_label/dialogue_label.tscn" id="2_hfvdi"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/nodes/responses_menu/dialogue_responses_menu.gd" id="3_1j1j0"]
+[ext_resource type="AudioStream" uid="uid://bnskjxysonqmm" path="res://Audio/dialogue_bleep.mp3" id="4_sx0ot"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_235ry"]
 content_margin_left = 6.0
@@ -200,5 +201,9 @@ text = "Response Example"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=963979321]
 unique_name_in_owner = true
 
+[node name="dialoguebleep" type="AudioStreamPlayer2D" parent="." unique_id=21875310]
+stream = ExtResource("4_sx0ot")
+
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
+[connection signal="spoke" from="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/DialogueLabel" to="." method="_on_dialogue_label_spoke"]
 [connection signal="response_selected" from="Balloon/CenterContainer/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]

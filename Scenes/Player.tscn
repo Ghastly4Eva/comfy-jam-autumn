@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://bumh84hinqd25" path="res://Scripts/PlayerStateMachine/walk_state.gd" id="5_52ee3"]
 [ext_resource type="FontFile" uid="uid://5dnye6qwfa4r" path="res://Fonts/m5x7.ttf" id="6_bhhdu"]
 [ext_resource type="Texture2D" uid="uid://bbisgmosbinth" path="res://Assets/CandyIcons.png" id="6_nn08x"]
+[ext_resource type="AudioStream" uid="uid://dw3c3n2ghl8k8" path="res://Audio/pick_up.mp3" id="8_megsn"]
+[ext_resource type="AudioStream" uid="uid://d2v0a23by4h5u" path="res://Audio/drop_item.mp3" id="9_yoq75"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3wro3"]
 size = Vector2(49.389576, 39.302265)
@@ -287,6 +289,7 @@ move_speed = 75.0
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1281155369]
 
 [node name="Control" type="Control" parent="Camera2D" unique_id=1855567811]
+z_index = 5
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -309,3 +312,10 @@ position = Vector2(0, -31.5)
 texture = ExtResource("6_nn08x")
 hframes = 5
 frame = 1
+
+[node name="pick_up" type="AudioStreamPlayer2D" parent="." unique_id=865736105]
+stream = ExtResource("8_megsn")
+volume_db = 2.0
+
+[node name="drop_item" type="AudioStreamPlayer2D" parent="." unique_id=801154956]
+stream = ExtResource("9_yoq75")

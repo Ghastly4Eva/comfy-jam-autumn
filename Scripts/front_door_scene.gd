@@ -6,9 +6,15 @@ extends Node2D
 @onready var treater4: Sprite2D = $treater4
 @onready var candy_interact_activer: Node2D = $"../../CandyInteractActiver"
 @onready var the_cat: Node2D = $"../../TheCat"
+@onready var animation_player: AnimationPlayer = $PanUpAdultPartyArrivalThing/AnimationPlayer
+@onready var pan_up_adult_party_arrival_thing: Sprite2D = $PanUpAdultPartyArrivalThing
+@onready var background: Sprite2D = $background
+
+@onready var door_open: AudioStreamPlayer2D = $door_open
+@onready var door_close: AudioStreamPlayer2D = $door_close
+@onready var knocking: AudioStreamPlayer2D = $"../../Knocking"
 
 @onready var player: Player = $".."
-
 
 var wanted_item_id : int
 #0 - apple
@@ -31,7 +37,9 @@ func _ready() -> void:
 	treater2.visible = false;
 	treater3.visible = false;
 	treater4.visible = false;
+	background.visible = true;
 	treater_waiting = false;
+	pan_up_adult_party_arrival_thing.visible = false;
 	ShuffleVariants()
 	ShuffleTreaters()
 	pass # Replace with function body.
@@ -44,19 +52,55 @@ func ShowDoor() -> void:
 		treater3.visible = false
 		treater4.visible = false
 	
+	door_open.play()
+
+func ShowDoorAdult() -> void:
+	knocking.stop()
+	visible = true;
+	
+	background.visible = false;
+	treater1.visible = false;
+	treater2.visible = false;
+	treater3.visible = false;
+	treater4.visible = false;
+	
+	pan_up_adult_party_arrival_thing.visible = true;
+	
+	door_open.play()
+	knocking.volume_db = -80
 
 func HideDoor() -> void:
+	door_close.play()
 	visible = false;
 
 func ActiveDoor() -> void:
 	if treater_waiting == false:
-		
+		knocking.volume_db = -80
 		await ChooseRandomDialogue()
 		the_cat.ChangeLocation()
 		candy_interact_activer.RandomizeInteracts()
 		treater_waiting = true
 	else:
 		await TreaterCheck()
+
+func AdultArrivesDoor() -> void:
+	knocking.volume_db = -80
+	#knocking.stop()
+	
+	background.visible = false;
+	treater1.visible = false;
+	treater2.visible = false;
+	treater3.visible = false;
+	treater4.visible = false;
+	
+	pan_up_adult_party_arrival_thing.visible = true;
+	animation_player.play("pan_up")
+	await animation_player.animation_finished
+	
+	DialogueManager.show_dialogue_balloon(load("res://Dialogue/AdultDialogue.dialogue"), "start")
+	await DialogueManager.dialogue_ended
+	
+	player.AdvanceTime()
 
 func TreaterCheck() -> void:
 	if wanted_item_id == player.held_item_id:
@@ -77,6 +121,7 @@ func TreaterCheck() -> void:
 		treater_waiting = false
 		player.AdvanceTime()
 		player.ClearHeldItem()
+		knocking.volume_db = -7
 	elif player.held_item_id == -1:
 		DialogueManager.show_dialogue_balloon(load("res://Dialogue/NothingTreater.dialogue"), "start")
 		await DialogueManager.dialogue_ended

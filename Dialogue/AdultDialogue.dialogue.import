@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://w53jgioy2b5j"
+path="res://.godot/imported/AdultDialogue.dialogue-d59f961c082e6168db8bc252ef7e5648.tres"
+
+[deps]
+
+source_file="res://Dialogue/AdultDialogue.dialogue"
+dest_files=["res://.godot/imported/AdultDialogue.dialogue-d59f961c082e6168db8bc252ef7e5648.tres"]
+
+[params]
+
+defaults=true
