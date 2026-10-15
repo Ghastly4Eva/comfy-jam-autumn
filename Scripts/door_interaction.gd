@@ -6,6 +6,8 @@ var in_dialogue = false
 @onready var player: Player = $"../CharacterBody2D"
 @onready var door_scene: Node2D = $"../CharacterBody2D/FrontDoorScene"
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var front_door_scene: Node2D = $"../CharacterBody2D/FrontDoorScene"
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -46,6 +48,14 @@ func _process(delta: float) -> void:
 			await ScreenTransition.fade_in()
 			player.can_move = true;
 			player_in_range = true;
+			
+			if player.time_label.text == "7:00 PM" and front_door_scene.treater_waiting == true:
+				player.can_move = false;
+				player_in_range = false;
+				DialogueManager.show_dialogue_balloon(load("res://Dialogue/NoticesCat.dialogue"), "start")
+				await DialogueManager.dialogue_ended
+				player.can_move = true;
+				#player_in_range = true;
 		
 	pass
 

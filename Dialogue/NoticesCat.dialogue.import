@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://0fjbrbmkgotx"
+path="res://.godot/imported/NoticesCat.dialogue-58801a911309ba59de23727a5e6bf042.tres"
+
+[deps]
+
+source_file="res://Dialogue/NoticesCat.dialogue"
+dest_files=["res://.godot/imported/NoticesCat.dialogue-58801a911309ba59de23727a5e6bf042.tres"]
+
+[params]
+
+defaults=true

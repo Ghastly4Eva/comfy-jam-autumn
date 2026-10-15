@@ -26,3 +26,7 @@ volume_db = -4.0
 [node name="cat_meow3" type="AudioStreamPlayer2D" parent="." unique_id=576199332]
 stream = ExtResource("5_whgko")
 volume_db = -4.0
+
+[node name="shuffleshuffle1" type="AudioStreamPlayer2D" parent="." unique_id=406511388]
+
+[node name="shuffleshuffle2" type="AudioStreamPlayer2D" parent="." unique_id=39263799]

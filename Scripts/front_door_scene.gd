@@ -9,6 +9,7 @@ extends Node2D
 @onready var animation_player: AnimationPlayer = $PanUpAdultPartyArrivalThing/AnimationPlayer
 @onready var pan_up_adult_party_arrival_thing: Sprite2D = $PanUpAdultPartyArrivalThing
 @onready var background: Sprite2D = $background
+@onready var door_interaction: Area2D = $"../../DoorInteraction"
 
 @onready var door_open: AudioStreamPlayer2D = $door_open
 @onready var door_close: AudioStreamPlayer2D = $door_close

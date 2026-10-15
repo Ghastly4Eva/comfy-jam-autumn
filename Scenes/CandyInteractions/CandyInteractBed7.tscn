@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://4yehpspu4yhx" path="res://Scripts/candy_interact.gd" id="1_3ic78"]
 [ext_resource type="Texture2D" uid="uid://cek8y1grvd4vg" path="res://Assets/Objects/Interactables/Indicator-Bed-7.png" id="2_7b5ml"]
 [ext_resource type="Texture2D" uid="uid://bbisgmosbinth" path="res://Assets/CandyIcons.png" id="3_snmnk"]
+[ext_resource type="AudioStream" uid="uid://dw3c3n2ghl8k8" path="res://Audio/pick_up.mp3" id="4_mo4ai"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
 size = Vector2(20, 47)
@@ -87,3 +88,6 @@ hframes = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=164017229]
 libraries/ = SubResource("AnimationLibrary_xgjlr")
+
+[node name="item_view" type="AudioStreamPlayer2D" parent="." unique_id=281315804]
+stream = ExtResource("4_mo4ai")

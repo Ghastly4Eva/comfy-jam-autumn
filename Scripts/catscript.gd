@@ -6,10 +6,24 @@ extends Node2D
 @onready var cat_meow_2: AudioStreamPlayer2D = $cat_meow2
 @onready var cat_meow_3: AudioStreamPlayer2D = $cat_meow3
 
+@onready var shuffleshuffle_2: AudioStreamPlayer2D = $shuffleshuffle2
+@onready var shuffleshuffle_1: AudioStreamPlayer2D = $shuffleshuffle1
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	position = Vector2(144, 123.5)
 	pass # Replace with function body.
+
+func ShuffleSound() -> void:
+	var randnum = randi_range(1, 2)
+	
+	if randnum == 1:
+		shuffleshuffle_1.pitch_scale = randf_range(0.8, 1.0)
+		shuffleshuffle_1.play()
+	else:
+		shuffleshuffle_2.pitch_scale = randf_range(0.8, 1.0)
+		shuffleshuffle_2.play()
+	pass
 
 func ChangeLocation() -> void:
 	var randnum = randi_range(1, 3)

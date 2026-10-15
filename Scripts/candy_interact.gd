@@ -4,6 +4,8 @@ var player_in_range : bool = false
 var candy_option : int = 0
 var interaction_step: int = 0
 
+@onready var item_view: AudioStreamPlayer2D = $item_view
+
 #0 - apple
 #1 - coco
 #2 - wrapper
@@ -55,6 +57,7 @@ func interacted() -> void:
 	icon_sprite.visible = true;
 	icon_sprite.frame = candy_option
 	animation_player.play("icon_idle")
+	item_view.play()
 	pass
 
 func confirm() -> void:
