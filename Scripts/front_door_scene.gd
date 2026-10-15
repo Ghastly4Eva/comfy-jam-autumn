@@ -20,6 +20,8 @@ var wanted_item_id : int
 var treater_waiting : bool = false
 var treater_dialogues: Array[int] = [1, 2, 3, 4]
 var treater_index: int = 0
+var treater_variants: Array[int] = [0, 1, 2, 3, 4]
+var variant_index: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -30,6 +32,7 @@ func _ready() -> void:
 	treater3.visible = false;
 	treater4.visible = false;
 	treater_waiting = false;
+	ShuffleVariants()
 	ShuffleTreaters()
 	pass # Replace with function body.
 
@@ -87,9 +90,15 @@ func ShuffleTreaters() -> void:
 	treater_dialogues.shuffle()
 	treater_index = 0
 
+func ShuffleVariants() -> void:
+	treater_variants = [0, 1, 2, 3, 4]
+	treater_variants.shuffle()
+	variant_index = 0
+
 func ChooseRandomDialogue() -> void:
 	if treater_index >= treater_dialogues.size():
 		ShuffleTreaters()
+		ShuffleVariants()
 	
 	var randnum = treater_dialogues[treater_index]
 	treater_index += 1
