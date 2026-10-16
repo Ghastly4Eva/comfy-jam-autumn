@@ -1,4 +1,10 @@
 extends Control
+
+@onready var UI_SFX = $UI_SFX
+@onready var hover = load("res://Audio/sfx_menu_hover.wav")
+@onready var select = load("res://Audio/sfx_menu_select.wav")
+@onready var back = load("res://Audio/sfx_menu_back.wav")
+
 enum display {
 	BLANK,
 	CREDITS,
@@ -31,3 +37,19 @@ func _on_quit_button_pressed() -> void:
 	#match x:
 		#"blank":
 			#
+
+
+func _on_button_mouse_entered() -> void:
+	UI_SFX.stream = hover
+	UI_SFX.play()
+	await $UI_SFX.finished
+	UI_SFX.stop()
+
+
+
+func _on_any_button_pressed() -> void:
+	UI_SFX.stream = select
+	UI_SFX.play()
+	await $UI_SFX.finished
+	UI_SFX.stop()
+	
