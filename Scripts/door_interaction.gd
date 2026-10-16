@@ -3,6 +3,8 @@ extends Area2D
 var player_in_range : bool = false
 var in_dialogue = false
 
+var cat_notice_dialogue_scene = false
+
 @onready var player: Player = $"../CharacterBody2D"
 @onready var door_scene: Node2D = $"../CharacterBody2D/FrontDoorScene"
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -13,6 +15,7 @@ var in_dialogue = false
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
+	cat_notice_dialogue_scene = false;
 	sprite.visible = false;
 
 
@@ -49,12 +52,13 @@ func _process(delta: float) -> void:
 			player.can_move = true;
 			player_in_range = true;
 			
-			if player.time_label.text == "7:00 PM" and front_door_scene.treater_waiting == true:
+			if player.time_label.text == "7:00 PM" and front_door_scene.treater_waiting == true and cat_notice_dialogue_scene == false:
 				player.can_move = false;
 				player_in_range = false;
 				DialogueManager.show_dialogue_balloon(load("res://Dialogue/NoticesCat.dialogue"), "start")
 				await DialogueManager.dialogue_ended
 				player.can_move = true;
+				cat_notice_dialogue_scene = true;
 				#player_in_range = true;
 		
 	pass

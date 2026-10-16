@@ -4,9 +4,23 @@
 ???: Answer the front door when a trick-or-treater arrives, then find the candy they ask for and bring it back to them!
 ???: An indicator will show you what you can interact with. Press Z to interact with an object and reveal what candy you will pick up. Press Z again to collect it!
 ???: Press X to throw away an item!
-???: The cat will hide candy around the house each time you answer the door so don't always check the same spots!!
 ???: You got that?
 - Yep!
 - Not really... => repeat
 ???: Good luck!!
+Lydia: (...?)
+Narrator: You cat is being annoyingly loud and noisy in the other room. 
+Narrator: You can hear everything that's being... meowed?
+- Listen in? (Recommended)
+- Ignore (Skip) => END
+Cat: Meow. (It's Halloween!! So trick-or-treaters will come by this evening.)
+Cat: Meow!! (I'll hide candy around the house while you're not looking!!)
+Cat: Meow! (Don't always check the same spots as I'll move the candy around!)
+Cat: Meowwwww (I want you to have a little challengeeee.)
+Cat: Meow! (But you'll hear me meow every time I do! :3 )
+Cat: Meow? (Why am I doing this?)
+Cat: Meow! (I'm bored!!)
+Narrator: You're not sure why you listened to the cat's excessive meowing.
+Narrator: You were unable to understand a thing the cat said.
+Lydia: (I'll imagine you said something nice and profound.)
 => END

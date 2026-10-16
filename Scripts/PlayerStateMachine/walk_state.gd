@@ -11,7 +11,6 @@ func enter() -> void:
 	pass
 
 func process_frame(_delta: float) -> State:
-	parent.animations.play(animation_name)
 	if parent.input_direction.y == -1:
 		animation_name = 'walk_up'
 	elif parent.input_direction.y == 1:
@@ -20,4 +19,6 @@ func process_frame(_delta: float) -> State:
 		animation_name = 'walk_left'
 	elif parent.input_direction.x == 1:
 		animation_name = 'walk_right'
+	
+	parent.animations.play(animation_name)
 	return null

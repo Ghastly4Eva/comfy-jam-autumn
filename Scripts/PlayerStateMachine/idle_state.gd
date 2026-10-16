@@ -5,7 +5,6 @@ func enter() -> void:
 	parent.velocity = Vector2.ZERO
 
 func process_frame(_delta: float) -> State:
-	parent.animations.play(animation_name)
 	if parent.facing_direction == 'down':
 		animation_name = 'idle_down'
 	elif parent.facing_direction == 'up':
@@ -14,4 +13,6 @@ func process_frame(_delta: float) -> State:
 		animation_name = 'idle_right'
 	elif parent.facing_direction == 'left':
 		animation_name = 'idle_left'
+	
+	parent.animations.play(animation_name)
 	return null

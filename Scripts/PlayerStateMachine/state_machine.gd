@@ -48,6 +48,7 @@ func process_frame(delta: float) -> void:
 		player.facing_direction = 'up'
 	elif player.input_direction.y == 1:
 		player.facing_direction = 'down'
+	
 	if player.input_direction.x == -1:
 		player.facing_direction = 'left'
 	elif player.input_direction.x == 1:
