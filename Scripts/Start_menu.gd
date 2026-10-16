@@ -22,11 +22,24 @@ func _on_start_button_pressed() -> void:
 
 
 func _on_credits_button_pressed() -> void:
-	pass # Replace with function body.
+	if $HBoxContainer/Display/Credits.is_visible_in_tree():
+		$HBoxContainer/Display/Credits.set_visible(false)
+	elif $"HBoxContainer/Display/Settings Menu".is_visible_in_tree():
+		$"HBoxContainer/Display/Settings Menu".set_visible(false)
+		$HBoxContainer/Display/Credits.set_visible(true)
+	else:
+		$HBoxContainer/Display/Credits.set_visible(true)
+	
 
 
 func _on_settings_button_pressed() -> void:
-	pass # Replace with function body.
+	if $"HBoxContainer/Display/Settings Menu".is_visible_in_tree():
+		$"HBoxContainer/Display/Settings Menu".set_visible(false)
+	elif $HBoxContainer/Display/Credits.is_visible_in_tree():
+		$HBoxContainer/Display/Credits.set_visible(false)
+		$"HBoxContainer/Display/Settings Menu".set_visible(true)
+	else:
+		$"HBoxContainer/Display/Settings Menu".set_visible(true)
 
 
 func _on_quit_button_pressed() -> void:

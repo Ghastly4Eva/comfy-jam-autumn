@@ -93,6 +93,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Settings Menu" type="Control" parent="CanvasLayer/Control/HBoxContainer/Display" unique_id=1231195636]
+visible = false
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -122,7 +123,19 @@ layout_mode = 2
 
 [node name="Credits" type="RichTextLabel" parent="CanvasLayer/Control/HBoxContainer/Display" unique_id=220742740]
 visible = false
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 10
+text = "★ Ghastly4Eva: Manager/Pixel Artist/Lead Programmer/Writer
+☆ Gavin Sexton: Audio Director/Co-Game Designer
+★ Nature Stroll: Artist
+☆ Tysore:  Concept Artist/Itch Page Designer
+★ AverageJoe: Programmer"
 
 [node name="StartScreenBackground1NoOutlines" type="AnimatedSprite2D" parent="CanvasLayer/Control/HBoxContainer" unique_id=205253684]
 z_index = -1
