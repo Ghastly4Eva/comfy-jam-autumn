@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://b2pf1xon726al" path="res://Scenes/CandyInteractions/CandyInteractMain4.tscn" id="16_nnt18"]
 [ext_resource type="PackedScene" uid="uid://dcbpijk0mx7u1" path="res://Scenes/CandyInteractions/CandyInteractMain5.tscn" id="17_ewbju"]
 [ext_resource type="Texture2D" uid="uid://bcqtqv3xxy5bd" path="res://Assets/Levels/Level_one/Kitchen-5.png" id="19_exi56"]
-[ext_resource type="AudioStream" uid="uid://bgyad56gu75oq" path="res://Audio/comfy jam fall music beta.mp3" id="20_7nbq1"]
+[ext_resource type="AudioStream" uid="uid://c8wiulryrd2kg" path="res://Audio/mx_gameplay.wav" id="20_7t8sx"]
 [ext_resource type="AudioStream" uid="uid://dox8am8vvmxrs" path="res://Audio/door_knocking.mp3" id="21_7t8sx"]
 [ext_resource type="Script" uid="uid://dx6c82kl0yfj6" path="res://Scripts/knocking.gd" id="22_mg4q0"]
 
@@ -94,9 +94,9 @@ position = Vector2(120, 28)
 position = Vector2(156, 29)
 
 [node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=644640142]
-stream = ExtResource("20_7nbq1")
+stream = ExtResource("20_7t8sx")
+volume_db = -3.089
 autoplay = true
-parameters/looping = true
 
 [node name="Knocking" type="AudioStreamPlayer2D" parent="." unique_id=1702391210]
 stream = ExtResource("21_7t8sx")

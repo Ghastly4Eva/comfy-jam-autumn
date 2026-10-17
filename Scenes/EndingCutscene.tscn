@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://boi1ke457paum" path="res://Scripts/ending_cutscene.gd" id="1_j1kru"]
 [ext_resource type="FontFile" uid="uid://5dnye6qwfa4r" path="res://Fonts/m5x7.ttf" id="2_eh184"]
+[ext_resource type="AudioStream" uid="uid://cmxpnftslwha" path="res://Audio/mx_menu.wav" id="3_d3if0"]
+[ext_resource type="Texture2D" uid="uid://dn7h7hnfa24xf" path="res://Assets/finish_cat_fridge_screen.png" id="4_rjeu0"]
 
 [sub_resource type="Animation" id="Animation_eh184"]
 length = 0.001
@@ -12,6 +14,18 @@ tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -32,6 +46,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rjeu0"]
 _data = {
@@ -43,15 +69,17 @@ _data = {
 script = ExtResource("1_j1kru")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1292364804]
-z_index = -1
-offset_left = -251.0
-offset_top = -129.0
-offset_right = 514.0
-offset_bottom = 350.0
+modulate = Color(1, 1, 1, 0)
+z_index = 2
+offset_left = -214.0
+offset_top = -136.0
+offset_right = 551.0
+offset_bottom = 343.0
 color = Color(0.10029396, 0.055871867, 0.10563467, 1)
 
 [node name="EndingLabel" type="Label" parent="." unique_id=1642966334]
 modulate = Color(1, 1, 1, 0)
+z_index = 2
 texture_filter = 1
 offset_left = 106.0
 offset_top = 71.0
@@ -63,3 +91,13 @@ text = "THE END"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="EndingLabel" unique_id=1650471474]
 libraries/ = SubResource("AnimationLibrary_rjeu0")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=1137855980]
+position = Vector2(-251, -129)
+stream = ExtResource("3_d3if0")
+volume_db = -3.089
+autoplay = true
+
+[node name="FinishCatFridgeScreen" type="Sprite2D" parent="." unique_id=598282696]
+position = Vector2(160, 89)
+texture = ExtResource("4_rjeu0")
