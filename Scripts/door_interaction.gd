@@ -52,7 +52,7 @@ func _process(delta: float) -> void:
 			player.can_move = true;
 			player_in_range = true;
 			
-			if player.time_label.text == "7:00 PM" and front_door_scene.treater_waiting == true and cat_notice_dialogue_scene == false:
+			if player.time_label.text == "6:00 PM" and front_door_scene.treater_waiting == true and cat_notice_dialogue_scene == false:
 				player.can_move = false;
 				player_in_range = false;
 				DialogueManager.show_dialogue_balloon(load("res://Dialogue/NoticesCat.dialogue"), "start")

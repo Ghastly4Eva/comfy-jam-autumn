@@ -28,7 +28,7 @@ func _ready() -> void:
 	state_machine.init(self)
 	candy_icons.visible = false;
 	can_move = false;
-	time_label.text = "7:00 PM"
+	time_label.text = "6:00 PM"
 	
 	DialogueManager.show_dialogue_balloon(load("res://Dialogue/Tutorial.dialogue"), "start")
 	await DialogueManager.dialogue_ended
@@ -69,7 +69,9 @@ func ClearHeldItem() -> void:
 	
 
 func AdvanceTime() -> void:
-	if time_label.text == "7:00 PM":
+	if time_label.text == "6:00 PM":
+		time_label.text = "7:00 PM"
+	elif time_label.text == "7:00 PM":
 		time_label.text = "8:00 PM"
 	elif time_label.text == "8:00 PM":
 		time_label.text = "9:00 PM"
