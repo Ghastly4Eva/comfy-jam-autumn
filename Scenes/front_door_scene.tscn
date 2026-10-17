@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c4ke2xmv7qslu"]
 
 [ext_resource type="Script" uid="uid://bwp4y4nu4p8mw" path="res://Scripts/front_door_scene.gd" id="1_hp2ms"]
-[ext_resource type="Texture2D" uid="uid://dam4123dte1iw" path="res://Assets/DoorRecolor2.png" id="2_skgob"]
+[ext_resource type="Texture2D" uid="uid://cm40yswlv0isr" path="res://Assets/background.png" id="2_am57u"]
 [ext_resource type="Texture2D" uid="uid://b3ub2r4ia015u" path="res://Assets/ChildWitch.png" id="3_skgob"]
 [ext_resource type="Texture2D" uid="uid://cvlqyt8mjkbxv" path="res://Assets/ChildGhost.png" id="4_csabw"]
 [ext_resource type="Texture2D" uid="uid://dw1qwck4hkbyb" path="res://Assets/ChildBug.png" id="5_5nf7f"]
@@ -52,7 +52,7 @@ z_index = 2
 script = ExtResource("1_hp2ms")
 
 [node name="background" type="Sprite2D" parent="." unique_id=1375427615]
-texture = ExtResource("2_skgob")
+texture = ExtResource("2_am57u")
 
 [node name="treater1" type="Sprite2D" parent="." unique_id=163932516]
 visible = false

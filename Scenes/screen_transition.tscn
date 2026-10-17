@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://hycwqkekcbjd"]
 
 [ext_resource type="Script" uid="uid://beywj04ldme84" path="res://Scripts/screen_transition.gd" id="1_8xucd"]
+[ext_resource type="Texture2D" uid="uid://kcd3h5xheu21" path="res://Assets/screen_transition.png" id="2_u83yi"]
 
 [sub_resource type="Animation" id="Animation_fr3c5"]
 length = 0.001
@@ -72,6 +73,75 @@ _data = {
 &"fade_out": SubResource("Animation_m7w1a")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmets"]
+atlas = ExtResource("2_u83yi")
+region = Rect2(960, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3w16"]
+atlas = ExtResource("2_u83yi")
+region = Rect2(640, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ag5lk"]
+atlas = ExtResource("2_u83yi")
+region = Rect2(320, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16m2n"]
+atlas = ExtResource("2_u83yi")
+region = Rect2(0, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kap2x"]
+atlas = ExtResource("2_u83yi")
+region = Rect2(0, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsfj5"]
+atlas = ExtResource("2_u83yi")
+region = Rect2(320, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mp0be"]
+atlas = ExtResource("2_u83yi")
+region = Rect2(640, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qa5se"]
+atlas = ExtResource("2_u83yi")
+region = Rect2(960, 0, 320, 180)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w0r0h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmets")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3w16")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ag5lk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16m2n")
+}],
+"loop": 0,
+"name": &"fade_in",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kap2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsfj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mp0be")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qa5se")
+}],
+"loop": 0,
+"name": &"fade_out",
+"speed": 7.0
+}]
+
 [node name="SceneTransition" type="CanvasLayer" unique_id=1955088680]
 process_mode = 3
 script = ExtResource("1_8xucd")
@@ -95,3 +165,8 @@ color = Color(0, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Control" unique_id=984305787]
 libraries/ = SubResource("AnimationLibrary_y1gyq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control" unique_id=581140358]
+position = Vector2(160, 90)
+sprite_frames = SubResource("SpriteFrames_w0r0h")
+animation = &"fade_out"

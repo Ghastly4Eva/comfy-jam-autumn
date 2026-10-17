@@ -85,6 +85,7 @@ texture_pressed = ExtResource("4_vr1f0")
 texture_hover = ExtResource("5_t1dhk")
 
 [node name="Quit Button" type="TextureButton" parent="CanvasLayer/Control/HBoxContainer/Buttons" unique_id=255236398]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("6_5egv6")
