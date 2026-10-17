@@ -4,11 +4,17 @@ extends Control
 @onready var hover = load("res://Audio/sfx_menu_hover.wav")
 @onready var select = load("res://Audio/sfx_menu_select.wav")
 @onready var back = load("res://Audio/sfx_menu_back.wav")
+const TRANSITION_ANIMATION = preload("uid://drfb048q4yg")
 
+func fade_in() -> void:
+	var transition = TRANSITION_ANIMATION.instantiate()
+	transition.fade_in = true
+	get_tree().root.add_child(transition)
+	await transition.animation.animation_finished
 
 func _on_start_button_pressed() -> void:
+	await fade_in()
 	get_tree().change_scene_to_file("res://Scenes/IntroCutscene.tscn")
-	
 
 
 func _on_credits_button_pressed() -> void:

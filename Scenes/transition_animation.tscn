@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://drfb048q4yg"]
+
+[ext_resource type="Script" uid="uid://yarlvfmaqfla" path="res://fade_in.gd" id="1_r25q0"]
+[ext_resource type="Texture2D" uid="uid://dg1358yuergq8" path="res://Assets/UI assets/TransitionFade/0.png" id="2_ljuaw"]
+[ext_resource type="Texture2D" uid="uid://dkim11l0yop32" path="res://Assets/UI assets/TransitionFade/1 alt B.png" id="3_cowus"]
+[ext_resource type="Texture2D" uid="uid://knollpkdo24a" path="res://Assets/UI assets/TransitionFade/2 alt B.png" id="4_c1tak"]
+[ext_resource type="Texture2D" uid="uid://dln2mt5ybfuii" path="res://Assets/UI assets/TransitionFade/3 alt B.png" id="5_68pdx"]
+[ext_resource type="Texture2D" uid="uid://8rj5o61tlqu4" path="res://Assets/UI assets/TransitionFade/4 alt.png" id="6_ik4xj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aimmr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ljuaw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cowus")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_c1tak")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_68pdx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ik4xj")
+}],
+"loop": 0,
+"name": &"run",
+"speed": 5.0
+}]
+
+[node name="TransitionAnimation" type="CanvasLayer" unique_id=269436781 node_paths=PackedStringArray("animation")]
+layer = 11
+script = ExtResource("1_r25q0")
+animation = NodePath("TransitionAnimation")
+
+[node name="TransitionAnimation" type="AnimatedSprite2D" parent="." unique_id=2063080209]
+position = Vector2(160, 90)
+sprite_frames = SubResource("SpriteFrames_aimmr")
+animation = &"run"
+frame = 3
+frame_progress = 0.46081513
+speed_scale = 1.5

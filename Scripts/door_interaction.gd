@@ -10,6 +10,7 @@ var cat_notice_dialogue_scene = false
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var front_door_scene: Node2D = $"../CharacterBody2D/FrontDoorScene"
 
+const TRANSITION_ANIMATION = preload("uid://drfb048q4yg")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,15 +20,26 @@ func _ready() -> void:
 	sprite.visible = false;
 
 
+func fade_out() -> void:
+	var transition = TRANSITION_ANIMATION.instantiate()
+	transition.fade_in = true
+	get_tree().current_scene.add_child(transition)
+	await transition.transition_point_reached
+func fade_in() -> void:
+	var transition = TRANSITION_ANIMATION.instantiate()
+	transition.fade_in = false
+	get_tree().current_scene.add_child(transition)
+	await transition.animation.animation_finished
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if player_in_range and Input.is_action_just_pressed("ui_accept"):
 		if player.time_label.text == "10:00 PM":
 			player.can_move = false;
 			player_in_range = false;
-			await ScreenTransition.fade_out()
+			await fade_out()
 			await door_scene.ShowDoorAdult()
-			await ScreenTransition.fade_in()
+			await fade_in()
 			
 			await door_scene.AdultArrivesDoor()
 			
@@ -40,15 +52,15 @@ func _process(delta: float) -> void:
 		else:
 			player.can_move = false;
 			player_in_range = false;
-			await ScreenTransition.fade_out()
+			await fade_out()
 			await door_scene.ShowDoor()
-			await ScreenTransition.fade_in()
+			await fade_in()
 			
 			await door_scene.ActiveDoor()
 			
-			await ScreenTransition.fade_out()
+			await fade_out()
 			door_scene.HideDoor()
-			await ScreenTransition.fade_in()
+			await fade_in()
 			player.can_move = true;
 			player_in_range = true;
 			
